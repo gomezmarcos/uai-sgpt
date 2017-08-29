@@ -1,0 +1,10 @@
+C:\Users\mgomez\source\repos\SGPT\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\mgomez\source\repos\SGPT\DAL\obj\Debug\DAL.Properties.Resources.resources
+C:\Users\mgomez\source\repos\SGPT\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
+C:\Users\mgomez\source\repos\SGPT\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\mgomez\source\repos\SGPT\DAL\bin\Debug\DAL.dll
+C:\Users\mgomez\source\repos\SGPT\DAL\bin\Debug\DAL.pdb
+C:\Users\mgomez\source\repos\SGPT\DAL\bin\Debug\BE.dll
+C:\Users\mgomez\source\repos\SGPT\DAL\bin\Debug\BE.pdb
+C:\Users\mgomez\source\repos\SGPT\DAL\obj\Debug\DAL.dll
+C:\Users\mgomez\source\repos\SGPT\DAL\obj\Debug\DAL.pdb
