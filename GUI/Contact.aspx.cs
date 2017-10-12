@@ -5,7 +5,17 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BLL;
+using BLL.servicio.idioma;
+using BLL.servicio.bitacora;
+using BLL.servicio.encriptacion;
+using BLL.servicio.autenticacion;
+using BLL.servicio.autorizacion;
 using BE;
+using BE.servicio.idioma;
+using BE.servicio.bitacora;
+using BE.servicio.autorizacion;
+using System.IO;
+using GUI.utiliadad;
 
 namespace GUI
 {
@@ -13,36 +23,27 @@ namespace GUI
     {
         UsuarioBll usuarioBll = new UsuarioBll();
         HotelBll hotelBll = new HotelBll();
-        protected void Page_Load(object sender, EventArgs e)
+        IdiomaBll idiomaBll = new IdiomaBll();
+        BLL.servicio.bitacora.Bitacora bitacora = new BLL.servicio.bitacora.Bitacora();
+        AutenticacionBll autenticacionBll = new AutenticacionBll();
+        AutorizacionBll autorizacionBll = new AutorizacionBll();
+
+        protected void Page_Load(object sender, EventArgs ee)
         {
             IList<Hotel> hoteles = hotelBll.BuscarTodos();
             Hotel h = hotelBll.BuscarPorId(2);
-            hoteles.Count();
-            Label1.Text = h.Nombre;
 
+            Evento e = new Evento();
+            e.Autor = "Dago";
+            e.Modulo = "hash";
+            e.Descripcion = Encriptador.Encriptar("hi");
+            bitacora.RegistrarEvento(e);
+
+            IPatente patente = autorizacionBll.ObtenerPatentePorUsuario(usuarioBll.BuscarPorId(1));
+
+
+            IList<Usuario> usuarios = usuarioBll.BuscarTodos();
             
-            foreach (var hh in hoteles)
-            {
-                TableRow t = new TableRow();
-                TableCell tCell1 = new TableCell();
-                tCell1.Text = hh.Id.ToString();
-                t.Cells.Add(tCell1);
-
-                TableCell tCell2 = new TableCell();
-                tCell2.Text = hh.Nombre;
-                t.Cells.Add(tCell2);
-
-                TableCell tCell3 = new TableCell();
-                tCell3.Text = hh.Descripcion;
-                t.Cells.Add(tCell3);
-
-                Table1.Rows.Add(t);
-            }
-            
-
-            string[] answers = new string[10] { "Y", "Y", "N", "Y", "N", "Y", "N", "Y", "N", "Y" };
-            rptResults1.DataSource = answers;
-            rptResults1.DataBind();
 
         }
     }

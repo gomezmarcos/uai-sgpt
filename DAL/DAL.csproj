@@ -42,13 +42,18 @@
   <ItemGroup>
     <Compile Include="DalGenerica.cs" />
     <Compile Include="HotelDal.cs" />
-    <Compile Include="IDalGenerica.cs" />
-    <Compile Include="idioma\IdiomaDal.cs" />
+    <Compile Include="servicio\autorizacion\AutorizacionRamaDal.cs" />
+    <Compile Include="servicio\autorizacion\AutorizacionDal.cs" />
+    <Compile Include="servicio\bitacora\EventoDal.cs" />
+    <Compile Include="servicio\idioma\CulturaDal.cs" />
+    <Compile Include="servicio\idioma\EntradaDal.cs" />
+    <Compile Include="servicio\idioma\IdiomaDal.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="servicio\verificacion\VerificacionDal.cs" />
     <Compile Include="SqlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioDal.cs" />
@@ -67,11 +72,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="seguridad\autenticacion\" />
-    <Folder Include="seguridad\autorizacion\" />
-    <Folder Include="seguridad\backup\" />
-    <Folder Include="seguridad\bitacora\" />
-    <Folder Include="seguridad\verificacion\" />
+    <Folder Include="servicio\autenticacion\" />
+    <Folder Include="servicio\backup\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

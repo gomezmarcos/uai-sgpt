@@ -3,14 +3,24 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics;
 using BE;
 using System.Reflection;
+using BLL.servicio.encriptacion;
 
 namespace Test
 {
     [TestClass]
     public class UnitTest1
     {
+
         [TestMethod]
         public void TestMethod1()
+        {
+            string valor = "hola";
+            syso(valor);
+            syso(Encriptador.Encriptar(valor));
+        }
+
+        [TestMethod]
+        public void TestMethod2()
         {
             Usuario u = new Usuario();
             u.Id = 1L;

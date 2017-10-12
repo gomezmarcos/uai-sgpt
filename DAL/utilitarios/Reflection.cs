@@ -11,6 +11,11 @@ namespace DAL.utilitarios
 {
     class Reflection
     {
+        private const string SQL_DATETIME_FORMATTER = "yyyyMMdd HH:mm:ss";
+        private const string COLUMNA_FECHA_ACTUALIZACION = "fechaactualizacion";
+        private const string COLUMNA_FECHA_CREACION = "fechacreacion";
+        private const string COLUMNA_VERIFICACION = "verificacion";
+
         public static object ObtenerValorDeLaPropiedad(object instance, PropertyInfo property)
         {
             return property.GetValue(instance);
@@ -28,23 +33,41 @@ namespace DAL.utilitarios
             {
                 if (property.Name.ToLower() == name.ToLower())
                 {
-                    property.SetValue(instance, value, null);
+                    if (value != null)
+                    {
+                        property.SetValue(instance, value, null);
+                    }
                 }
             }
         }
 
-        internal static Dictionary<string, string> BuscarPropiedadesParaInsertDB<T>(T entity) where T : IBusinessEntity
+        internal static Dictionary<string, string> ArmarParametrosDeCreacion<T>(T entity) where T : IBusinessEntity
         {
-            String columns = "";
-            String values = "";
 
+            string sqlFormattedDate = DateTime.Now.ToString("yyyyMMdd HH:mm:ss");
+
+            String columns = COLUMNA_FECHA_CREACION + "," + COLUMNA_FECHA_ACTUALIZACION + ","; 
+            String values = "'" + sqlFormattedDate + "','" + sqlFormattedDate + "',";
+            
             foreach (var property in entity.GetType().GetProperties())
             {
                 string propertyName = property.Name.ToLower();
-                if (propertyName != "fechaactualizacion" && propertyName != "verificacion" && propertyName != "id")
-                {
+                if (propertyName != COLUMNA_FECHA_CREACION 
+                    && propertyName != COLUMNA_FECHA_ACTUALIZACION 
+                    && propertyName != COLUMNA_VERIFICACION 
+                    && propertyName != "id"
+                    && !property.PropertyType.UnderlyingSystemType.Name.ToString().ToLower().Contains("hashset")
+                    && !propertyName.StartsWith("fk") )
+                    {
                     columns += property.Name +",";
-                    values += property.GetValue(entity) + ",";
+                    if (property.PropertyType.ToString().Equals("System.String"))
+                    {
+                        values += "'" + property.GetValue(entity) + "',";
+                    } else
+                    {
+                        values += property.GetValue(entity) + ",";
+                    }
+                    
                 }
             }
 
@@ -55,16 +78,32 @@ namespace DAL.utilitarios
             return d;
         }
 
-        internal static string BuscarPropiedadesParaUpdateDB<T>(T entity) where T : IBusinessEntity
+        internal static string ArmarParametrosDeActualizacion<T>(T entity) where T : IBusinessEntity
         {
-            String sets = "";
+            String sets = COLUMNA_FECHA_ACTUALIZACION + " = '" + DateTime.Now.ToString(SQL_DATETIME_FORMATTER) + "',";
             
             foreach (var property in entity.GetType().GetProperties())
             {
                 string propertyName = property.Name.ToLower();
-                if (propertyName != "fechaCreacion")
+                if (propertyName != COLUMNA_FECHA_CREACION 
+                    && propertyName != COLUMNA_FECHA_ACTUALIZACION 
+                    && propertyName != COLUMNA_VERIFICACION 
+                    && propertyName != "id"
+                    && !property.PropertyType.UnderlyingSystemType.Name.ToString().ToLower().Contains("hashset")
+                    && !propertyName.StartsWith("fk") )
                 {
-                    sets += property.Name + "=" + property.GetValue(entity) + ",";
+                    if (property.PropertyType.ToString().Equals("System.String"))
+                    {
+                        sets += property.Name + "='" + property.GetValue(entity) + "',";
+                    } else if (property.GetValue(entity) == null)
+                    {
+                        //do nothing
+                    }
+                    else
+                    {
+                        sets += property.Name + "=" + property.GetValue(entity) + ",";
+                    }
+                    
                 }
             }
 

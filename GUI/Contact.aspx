@@ -8,7 +8,7 @@
         Redmond, WA 98052-6399<br />
         <abbr title="Phone">P:</abbr>
         425.555.0100
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="contactLabel1" runat="server" Text="Label" />
     </address>
 
     <asp:Table ID="Table1" runat="server" class="table table-striped">
@@ -19,7 +19,13 @@
             </asp:TableHeaderRow>
     </asp:Table>
 
-    
+    <asp:Table ID="Table2" runat="server" class="table table-striped">
+        <asp:TableHeaderRow runat="server" Font-Bold="true">
+                <asp:TableHeaderCell>Id</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Alias</asp:TableHeaderCell>
+                <asp:TableHeaderCell><asp:Label id ="contactLabelArea" runat="server" Text="sin traduccion"/></asp:TableHeaderCell>
+            </asp:TableHeaderRow>
+    </asp:Table>
 
 
 

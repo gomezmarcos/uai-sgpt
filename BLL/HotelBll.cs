@@ -8,7 +8,6 @@ using DAL;
 
 namespace BLL
 {
-    //public class HotelBll : IGenericInterface<Hotel>
     public class HotelBll : AbstractBll<Hotel>
     {
         private DalGenerica<Hotel> dal = new HotelDal();
@@ -17,5 +16,6 @@ namespace BLL
         {
             return dal;
         }
+
     }
 }

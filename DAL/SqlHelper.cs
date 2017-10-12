@@ -27,15 +27,19 @@ namespace DAL
             try
             {
                 con.Open();
-                var Resultado = cmd.ExecuteNonQuery();
+                var Resultado = cmd.ExecuteScalar();
                 con.Close();
                 con.Dispose();
-                return Resultado;
+                return (int) Resultado;
             }
             catch (SqlException ex)
             {
                 //Seguridad.Log Log = new Seguridad.Log();
                 //Log.Write(ex.Message, ex.StackTrace, "DAL", "Critico");
+                return -1;
+            }
+            catch(Exception exx)
+            {
                 return -1;
             }
         }
@@ -47,6 +51,8 @@ namespace DAL
             da.SelectCommand.Connection = new SqlConnection(strCon);
             da.SelectCommand.CommandType = CommandType.Text;
             da.SelectCommand.CommandText = Consulta;
+            if (Params != null)
+                da.SelectCommand.Parameters.AddRange(Params);
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
@@ -65,7 +71,7 @@ namespace DAL
             con.Open();
             var Resultado = cmd.ExecuteScalar();
             con.Close();
-            return (int)Resultado;
+            return Resultado == null ? -1 : (int)Resultado;
         }
         public int Update(string Consulta, SqlParameter[] Params)
         {

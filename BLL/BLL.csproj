@@ -40,12 +40,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BllGenerica.cs" />
     <Compile Include="HotelBll.cs" />
-    <Compile Include="AbstrarBll.cs" />
-    <Compile Include="IGenericInterface.cs" />
-    <Compile Include="idioma\IdiomaBll.cs" />
+    <Compile Include="BllGenerica.cs" />
+    <Compile Include="servicio\autenticacion\AutenticacionBll.cs" />
+    <Compile Include="servicio\autorizacion\AutorizacionRamaBll.cs" />
+    <Compile Include="servicio\autorizacion\AutorizacionBll.cs" />
+    <Compile Include="servicio\bitacora\Bitacora.cs" />
+    <Compile Include="servicio\bitacora\EventoBll.cs" />
+    <Compile Include="servicio\encriptacion\Encriptador.cs" />
+    <Compile Include="servicio\idioma\CulturaBll.cs" />
+    <Compile Include="servicio\idioma\EntradaBll.cs" />
+    <Compile Include="servicio\idioma\IdiomaBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="servicio\verificacion\VerificacionBll.cs" />
+    <Compile Include="servicio\verificacion\VerificacionRecalculable.cs" />
     <Compile Include="UsuarioBll.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,11 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="log\" />
-    <Folder Include="seguridad\autenticacion\" />
-    <Folder Include="seguridad\autorizacion\" />
-    <Folder Include="seguridad\backup\" />
-    <Folder Include="seguridad\bitacora\" />
-    <Folder Include="seguridad\verificacion\" />
+    <Folder Include="servicio\backup\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

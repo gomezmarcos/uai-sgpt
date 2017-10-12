@@ -1,6 +1,0 @@
-C:\Users\mgomez\source\repos\SGPT\BE\bin\Debug\BE.dll
-C:\Users\mgomez\source\repos\SGPT\BE\bin\Debug\BE.pdb
-C:\Users\mgomez\source\repos\SGPT\BE\obj\Debug\BE.csprojResolveAssemblyReference.cache
-C:\Users\mgomez\source\repos\SGPT\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
-C:\Users\mgomez\source\repos\SGPT\BE\obj\Debug\BE.dll
-C:\Users\mgomez\source\repos\SGPT\BE\obj\Debug\BE.pdb
