@@ -10,5 +10,6 @@ namespace BE.servicio.idioma
     {
         public string Clave { get; set; }
         public string Valor { get; set; }
+        public long Fk_idioma { get; set; }
     }
 }

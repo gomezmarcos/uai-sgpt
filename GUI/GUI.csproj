@@ -128,8 +128,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Autenticar.aspx" />
-    <Content Include="Bitacora.aspx" />
+    <Content Include="soporte\autenticar\Autenticar.aspx" />
+    <Content Include="soporte\bitacora\Bitacora.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -144,9 +144,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="patentes\PatenteAbm.aspx" />
-    <Content Include="patentes\PatenteAlta.aspx" />
-    <Content Include="patentes\PatenteEditar.aspx" />
+    <Content Include="soporte\idioma\EntradaEditar.aspx" />
+    <Content Include="soporte\idioma\IdiomaAbm.aspx" />
+    <Content Include="soporte\idioma\IdiomaEditar.aspx" />
+    <Content Include="soporte\patentes\PatenteAbm.aspx" />
+    <Content Include="soporte\patentes\PatenteAlta.aspx" />
+    <Content Include="soporte\patentes\PatenteEditar.aspx" />
     <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -193,18 +196,18 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Autenticar.aspx.cs">
+    <Compile Include="soporte\autenticar\Autenticar.aspx.cs">
       <DependentUpon>Autenticar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Autenticar.aspx.designer.cs">
+    <Compile Include="soporte\autenticar\Autenticar.aspx.designer.cs">
       <DependentUpon>Autenticar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Bitacora.aspx.cs">
+    <Compile Include="soporte\bitacora\Bitacora.aspx.cs">
       <DependentUpon>Bitacora.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Bitacora.aspx.designer.cs">
+    <Compile Include="soporte\bitacora\Bitacora.aspx.designer.cs">
       <DependentUpon>Bitacora.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
@@ -224,25 +227,46 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="patentes\PatenteAbm.aspx.cs">
+    <Compile Include="soporte\idioma\EntradaEditar.aspx.cs">
+      <DependentUpon>EntradaEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="soporte\idioma\EntradaEditar.aspx.designer.cs">
+      <DependentUpon>EntradaEditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="soporte\idioma\IdiomaAbm.aspx.cs">
+      <DependentUpon>IdiomaAbm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="soporte\idioma\IdiomaAbm.aspx.designer.cs">
+      <DependentUpon>IdiomaAbm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="soporte\idioma\IdiomaEditar.aspx.cs">
+      <DependentUpon>IdiomaEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="soporte\idioma\IdiomaEditar.aspx.designer.cs">
+      <DependentUpon>IdiomaEditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="soporte\patentes\PatenteAbm.aspx.cs">
       <DependentUpon>PatenteAbm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="patentes\PatenteAbm.aspx.designer.cs">
+    <Compile Include="soporte\patentes\PatenteAbm.aspx.designer.cs">
       <DependentUpon>PatenteAbm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="patentes\PatenteAlta.aspx.cs">
+    <Compile Include="soporte\patentes\PatenteAlta.aspx.cs">
       <DependentUpon>PatenteAlta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="patentes\PatenteAlta.aspx.designer.cs">
+    <Compile Include="soporte\patentes\PatenteAlta.aspx.designer.cs">
       <DependentUpon>PatenteAlta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="patentes\PatenteEditar.aspx.cs">
+    <Compile Include="soporte\patentes\PatenteEditar.aspx.cs">
       <DependentUpon>PatenteEditar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="patentes\PatenteEditar.aspx.designer.cs">
+    <Compile Include="soporte\patentes\PatenteEditar.aspx.designer.cs">
       <DependentUpon>PatenteEditar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -260,7 +284,7 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="utiliadad\GuiHelper.cs" />
+    <Compile Include="soporte\utiliadad\GuiHelper.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -278,6 +302,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="soporte\datos\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

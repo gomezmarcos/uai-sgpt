@@ -10,7 +10,8 @@ namespace BE.servicio.idioma
     {
         public string Cultura { get; set; }
         public String Nombre { get; set; }
-        public IList<Entrada> Entradas { get; set; }
+        private IList<Entrada> entradas = new List<Entrada>();
+        public IList<Entrada> Entradas { get { return entradas; } set { entradas = value; } }
 
         public string Traducir(string controlId)
         {

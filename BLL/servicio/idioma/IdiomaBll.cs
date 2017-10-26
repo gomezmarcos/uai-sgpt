@@ -20,6 +20,30 @@ namespace BLL.servicio.idioma
             return idiomaDal;
         }
 
+        public new Idioma Registrar(Idioma idioma)
+        {
+            Idioma nuevoIdioma = base.Registrar(idioma);
+
+            //buscar todos los labels con idioma default (arg)
+            IList<Entrada> entradas = entradaBll.BuscarTodos(new Dictionary<String, object>
+                {
+                    { "fk_idioma", 1 } //Default
+                }
+            );
+
+            foreach (Entrada e in entradas)
+            {
+                Entrada nueva = new Entrada();
+                nueva.Clave = e.Clave;
+                nueva.Valor = e.Valor + " " + idioma.Cultura;
+                nueva.Fk_idioma = nuevoIdioma.Id;
+                nuevoIdioma.Entradas.Add( entradaBll.Registrar(nueva));
+            }
+            //registrarlos todos fk_idioma = idioma.Id; clave = idioma.clave; valor = idioma.valor + idioma.cultura
+
+            return nuevoIdioma;
+        }
+
         public Idioma ObtenerPorUsuario(Usuario usuario)
         {
             int IdiomaId =  idiomaDal.ObtenerIdiomaPorUsuario(usuario); //lo saca de la tabla USUARIO_IDIOMA, no de idioma.
@@ -33,5 +57,7 @@ namespace BLL.servicio.idioma
 
             return idioma;
         }
+
+        
     }
 }

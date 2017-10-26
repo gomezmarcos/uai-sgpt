@@ -8,5 +8,6 @@ namespace BE.servicio.autorizacion
         string GetCodigoPatente();
         void agregarHijo(IPatente hijo);
         List<string> GetCodigoPatenteComoLista();
+        List<long> GetIdPatenteComoLista();
     }
 }

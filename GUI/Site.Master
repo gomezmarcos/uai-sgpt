@@ -56,11 +56,11 @@
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                         
                     </ul>
+
                     <ul class="nav navbar-nav">
-                        <!-- for each idioma in Idiomas =?"codigo" -->
-                        <li><a runat="server" href="~/About">English</a></li>
-                        <li><a runat="server" href="~/Contact">Espa;ol</a></li>
+                            <asp:DropDownList ID="lstIdiomas" runat="server" CssClass="form-control" OnSelectedIndexChanged="lstIdiomas_SelectedIndexChanged" AutoPostBack="true" ></asp:DropDownList>
                     </ul>
+
                 </div>
                 
             </div>

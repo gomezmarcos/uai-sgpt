@@ -38,5 +38,12 @@ namespace BE.servicio.autorizacion
             lista.Add(this.Codigo);
             return lista;
         }
+
+        public List<long> GetIdPatenteComoLista()
+        {
+            List<long> lista = new List<long>();
+            lista.Add(this.Id);
+            return lista;
+        }
     }
 }

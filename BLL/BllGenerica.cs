@@ -61,6 +61,7 @@ namespace BLL
         {
             return GetDal().Modificar(entidad);
         }
+
         public T Registrar(T entidad)
         {
             return GetDal().Registrar(entidad);

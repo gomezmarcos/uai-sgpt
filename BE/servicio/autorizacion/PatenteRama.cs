@@ -60,5 +60,15 @@ namespace BE.servicio.autorizacion
             }
             return lista;
         }
+
+        public List<long> GetIdPatenteComoLista()
+        {
+            List<long> lista = new List<long>();
+            foreach (IPatente p in Patentes)
+            {
+                lista.AddRange(p.GetIdPatenteComoLista());
+            }
+            return lista;
+        }
     }
 }

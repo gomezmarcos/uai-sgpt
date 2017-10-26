@@ -10,7 +10,7 @@ using DAL.servicio.idioma;
 
 namespace BLL.servicio.idioma
 {
-    class EntradaBll : AbstractBll<Entrada>
+    public class EntradaBll : AbstractBll<Entrada>
     {
         EntradaDal entradaDal = new EntradaDal();
         public override DalGenerica<Entrada> GetDal()

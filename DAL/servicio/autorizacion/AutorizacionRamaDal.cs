@@ -39,10 +39,15 @@ namespace DAL.servicio.autorizacion
             string consulta = "insert into PATENTE (codigo, descripcion, fechaActualizacion, fechaCreacion, fk_patente, tipo) values" +
                 " (@P1, @P2, @P3, @P4, @P5, @P6)";
 
+            //patente = this.BuscarPorId(patente.Id);
+
             List<string> patentes = patente.GetCodigoPatenteComoLista();
+            //List<long> patentes = patente.GetIdPatenteComoLista();
             foreach (string ppp in patentes)
+            //foreach (long ppp in patentes)
             {
                 Patente p = autorizacionDal.BuscarTodos(new Dictionary<string, object> { { "codigo", ppp } })[0];
+                //Patente p = autorizacionDal.BuscarTodos(new Dictionary<string, object> { { "Id", ppp } })[0];
                 if (p.Tipo == "rama")
                 {
                     continue;
