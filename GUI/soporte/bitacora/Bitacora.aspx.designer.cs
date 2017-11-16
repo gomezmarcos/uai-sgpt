@@ -10,42 +10,42 @@
 namespace GUI {
     
     
-    public partial class SiteMaster {
+    public partial class Bitacora {
         
         /// <summary>
-        /// lstIdiomas control.
+        /// filtro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lstIdiomas;
+        protected global::System.Web.UI.WebControls.DropDownList filtro;
         
         /// <summary>
-        /// LoginName1 control.
+        /// valorFiltro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginName LoginName1;
+        protected global::System.Web.UI.WebControls.TextBox valorFiltro;
         
         /// <summary>
-        /// btnLogout control.
+        /// btnBuscar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogout;
+        protected global::System.Web.UI.WebControls.Button btnBuscar;
         
         /// <summary>
-        /// MainContent control.
+        /// tablaEventos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Table tablaEventos;
     }
 }

@@ -98,8 +98,8 @@ namespace BLL.servicio.autorizacion
 
             foreach (Patente p in patentes)
             {
-                if (!BuscarIdPatentes(usuario).Contains(p.Id))
-                    continue;
+                //if (!BuscarIdPatentes(usuario).Contains(p.Id))
+                //    continue;
                 if (p.Tipo == "rama")
                 {
                     PatenteRama pr = new PatenteRama

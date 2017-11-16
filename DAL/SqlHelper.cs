@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL.utilitarios;
 
 namespace DAL
 {
@@ -164,6 +165,31 @@ namespace DAL
             return P;
         }
         #endregion
+
+        public List<T> MapMany<T>(DataTable dt)
+        {
+            List<T> entidades = new List<T>();
+
+            foreach (var dr in dt.Rows.Cast<DataRow>())
+            {
+                T instance = Activator.CreateInstance<T>();
+
+                foreach (var c in dt.Columns.Cast<DataColumn>())
+                {
+
+                    string columnName = c.ColumnName;
+                    object columnValue = dr[c];
+                    if (!dr.IsNull(columnName))
+                    {
+                        Reflection.ActualizarPropiedad(instance, columnName, columnValue);
+                    }
+
+                }
+                entidades.Add(instance);
+            }
+
+            return entidades;
+        }
 
 
     }

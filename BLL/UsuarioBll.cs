@@ -23,9 +23,10 @@ namespace BLL
 
         public new Usuario Registrar(Usuario usuario)
         {
-            Usuario u = base.Registrar(usuario);
-            usuario.verificacion = usuario.GenerarVerificacion();
-            u = base.Modificar(usuario);
+            Usuario u = usuarioDal.Registrar(usuario);
+           // Usuario u = base.Registrar(usuario);
+            u.verificacion = u.GenerarVerificacion();
+            u = usuarioDal.Modificar(u);
 
             Recalcular<Usuario>();
 
@@ -34,6 +35,7 @@ namespace BLL
 
         public new void Eliminar(Usuario usuario)
         {
+            //falta eliminar referencias de idioma y patente
             base.Eliminar(usuario);
             Recalcular<Usuario>();
         }
@@ -41,7 +43,7 @@ namespace BLL
         public new Usuario Modificar(Usuario usuario)
         {
             usuario.verificacion = usuario.GenerarVerificacion();
-            Usuario u = base.Modificar(usuario);
+            Usuario u = usuarioDal.Modificar(usuario);
             Recalcular<Usuario>();
             return u;
         }

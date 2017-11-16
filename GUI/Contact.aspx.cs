@@ -16,6 +16,7 @@ using BE.servicio.bitacora;
 using BE.servicio.autorizacion;
 using System.IO;
 using GUI.utiliadad;
+using BLL.servicio.dominio;
 
 namespace GUI
 {

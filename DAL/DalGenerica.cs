@@ -174,6 +174,7 @@ namespace DAL
                 string columnName = c.ColumnName;
                 if (!(dt.Rows[0].IsNull(columnName) 
                         || (columnName.ToLower().Contains("fk"))
+                        || (columnName.ToLower().StartsWith("obj"))
                         || (columnName.ToLower().Equals("id") && dt.Rows[0][c.Ordinal].ToString() == "0")))
                 {
                     object columnValue = dt.Rows[0][c.Ordinal];

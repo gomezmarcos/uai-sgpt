@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - SGPT Software</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -47,19 +47,65 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <a class="navbar-brand" runat="server" href="~/">SGPT</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                        
+                        <li><a runat="server" href="~/">Inicio</a></li>
+                        <%
+                            BE.Usuario usuario = (BE.Usuario) Session["usuario"];
+
+                            if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("PADM")) { %>
+                                <li><a runat="server" href="~/soporte/patentes/patenteAbm">Seguridad</a></li>
+                        <% } %>
+                        <%
+                            if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("UADM")) { %>
+                                <li><a runat="server" href="~/soporte/usuarios/usuarioSistemaAbm">Usuarios</a></li>
+                        <% } %>
+                        <%
+                            if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("BIT")) { %>
+                                <li><a runat="server" href="~/soporte/bitacora/bitacora">Bitacora</a></li>
+                        <% } %>
+                        <%
+                            if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("BKP")) { %>
+                                <li><a runat="server" href="~/soporte/idioma/idiomaAbm">BackUp/Restore</a></li>
+                        <% } %>
+                        <%
+                            if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("IADM")) { %>
+                                <li><a runat="server" href="~/soporte/idioma/idiomaAbm">Idioma</a></li>
+                        <% } %>
+
+                        <%
+                            if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("LPAQ")) { %>
+                                <li><a runat="server" href="~/dominio/paquetes/paqueteAbm">Paquetes</a></li>
+                        <% } %>
+                        <%
+                            if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("LHOT")) { %>
+                                <li><a runat="server" href="~/dominio/hoteles/hotelAbm">Hoteles</a></li>
+                        <% } %>
+                        <%
+                            if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("LVUE")) { %>
+                                <li><a runat="server" href="~/dominio/vuelos/vueloAbm">Vuelos</a></li>
+                        <% } %>
+                        <%
+                            if ( usuario == null ) { %>
+                                <li><a runat="server" href="~/dominio/usuario/registrarUsuario">Crear cuenta</a></li>
+                        <% } %>
                     </ul>
 
                     <ul class="nav navbar-nav">
                             <asp:DropDownList ID="lstIdiomas" runat="server" CssClass="form-control" OnSelectedIndexChanged="lstIdiomas_SelectedIndexChanged" AutoPostBack="true" ></asp:DropDownList>
                     </ul>
+                        <% BE.Usuario u = (BE.Usuario) Session["usuario"];
+                            if ( usuario != null) {  %>
+                                Bienvenido <%u.Alias.ToString();%>! 
+                        <% } %>
+
+                    <asp:LoginName id="LoginName1" runat="server"  FormatString ="Bienvenido, {0}" />
+
+                    <div class="form-group">
+                        <asp:Button ID="btnLogout" UseSubmitBehavior="false" OnClick="btnLogout_Click"  Text="Desconectar" class="btn btn-link " runat="server" />
+                    </div>
 
                 </div>
                 
@@ -70,7 +116,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - SGPT Software</p>
             </footer>
         </div>
 

@@ -56,9 +56,9 @@ namespace DAL.utilitarios
                     && propertyName != COLUMNA_FECHA_ACTUALIZACION 
                     && propertyName != COLUMNA_VERIFICACION 
                     && propertyName != "id"
+                    && !propertyName.StartsWith("obj")
                     && !property.PropertyType.Name.StartsWith("IList")
                     && !property.PropertyType.UnderlyingSystemType.Name.ToString().ToLower().Contains("hashset")
-                    //&& !propertyName.StartsWith("fk") )
                      )
                     {
                     columns += property.Name +",";
@@ -91,6 +91,7 @@ namespace DAL.utilitarios
                     && propertyName != COLUMNA_FECHA_ACTUALIZACION 
                     && propertyName != COLUMNA_VERIFICACION 
                     && propertyName != "id"
+                    && !propertyName.StartsWith("obj")
                     && !property.PropertyType.Name.StartsWith("IList")
                     && !property.PropertyType.UnderlyingSystemType.Name.ToString().ToLower().Contains("hashset")
                     && !propertyName.StartsWith("fk") )

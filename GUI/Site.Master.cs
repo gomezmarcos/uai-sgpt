@@ -8,6 +8,7 @@ using BLL.servicio.idioma;
 using GUI.utiliadad;
 using BE.servicio.idioma;
 using BE;
+using System.Web.Security;
 
 namespace GUI
 {
@@ -48,6 +49,15 @@ namespace GUI
             IList<Entrada> entradas = entradaBll.BuscarTodos(m);
             idioma.Entradas = entradas;
             GuiHelper.TraducirPagina(this.Page, idioma);
+        }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            HttpContext.Current.Session.Clear();
+            HttpContext.Current.Session.Abandon();
+            ViewState.Clear();
+            FormsAuthentication.SignOut();
+            Response.Redirect("~/soporte/autenticar/Autenticar");
         }
     }
 }
