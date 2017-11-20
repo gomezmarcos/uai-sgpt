@@ -51,45 +51,65 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Inicio</a></li>
+                        <li><a runat="server" href="~/">
+                            <asp:Label runat="server" ID="masterLblInicio">Inicio Default</asp:Label>
+                            </a></li>
                         <%
                             BE.Usuario usuario = (BE.Usuario) Session["usuario"];
 
                             if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("PADM")) { %>
-                                <li><a runat="server" href="~/soporte/patentes/patenteAbm">Seguridad</a></li>
+                                <li><a runat="server" href="~/soporte/patentes/patenteAbm">
+                                    <asp:Label runat="server" ID="masterLblSeguridad">Seguridad Default</asp:Label>
+                                    </a></li>
                         <% } %>
                         <%
                             if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("UADM")) { %>
-                                <li><a runat="server" href="~/soporte/usuarios/usuarioSistemaAbm">Usuarios</a></li>
+                                <li><a runat="server" href="~/soporte/usuarios/usuarioSistemaAbm">
+                                    <asp:Label runat="server" ID="masterLblUsuarios">Usuario Default</asp:Label>
+                                    </a></li>
                         <% } %>
                         <%
                             if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("BIT")) { %>
-                                <li><a runat="server" href="~/soporte/bitacora/bitacora">Bitacora</a></li>
+                                <li><a runat="server" href="~/soporte/bitacora/bitacora">
+                                    <asp:Label runat="server" ID="masterLblBitacora">Bitacora Default</asp:Label>
+                                    </a></li>
                         <% } %>
                         <%
                             if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("BKP")) { %>
-                                <li><a runat="server" href="~/soporte/idioma/idiomaAbm">BackUp/Restore</a></li>
+                                <li><a runat="server" href="~/soporte/idioma/idiomaAbm">
+                                    <asp:Label runat="server" ID="masterLblBkp">BackUp/Restore Default</asp:Label>
+                                    </a></li>
                         <% } %>
                         <%
                             if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("IADM")) { %>
-                                <li><a runat="server" href="~/soporte/idioma/idiomaAbm">Idioma</a></li>
+                                <li><a runat="server" href="~/soporte/idioma/idiomaAbm">
+                                    <asp:Label runat="server" ID="masterLblIdioma">Idioma Default</asp:Label>
+                                    </a></li>
                         <% } %>
 
                         <%
-                            if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("LPAQ")) { %>
-                                <li><a runat="server" href="~/dominio/paquetes/paqueteAbm">Paquetes</a></li>
+                            if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("PQADM")) { %>
+                                <li><a runat="server" href="~/dominio/paquete/paqueteAbm">
+                                    <asp:Label runat="server" ID="masterLblPaquete">Paquetes Default</asp:Label>
+                                    </a></li>
                         <% } %>
                         <%
-                            if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("LHOT")) { %>
-                                <li><a runat="server" href="~/dominio/hoteles/hotelAbm">Hoteles</a></li>
+                            if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("HADM")) { %>
+                                <li><a runat="server" href="~/dominio/hotel/hotelAbm">
+                                    <asp:Label runat="server" ID="masterLblHotel">Hoteles Default</asp:Label>
+                                    </a></li>
                         <% } %>
                         <%
-                            if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("LVUE")) { %>
-                                <li><a runat="server" href="~/dominio/vuelos/vueloAbm">Vuelos</a></li>
+                            if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("VADM")) { %>
+                                <li><a runat="server" href="~/dominio/vuelo/vueloAbm">
+                                    <asp:Label runat="server" ID="masterLblVuelo">Hoteles Default</asp:Label>
+                                    </a></li>
                         <% } %>
                         <%
                             if ( usuario == null ) { %>
-                                <li><a runat="server" href="~/dominio/usuario/registrarUsuario">Crear cuenta</a></li>
+                                <li><a runat="server" href="~/dominio/usuario/registrarUsuario">
+                                    <asp:Label runat="server" ID="masterLblRegistrarUsuario">Registrar Usuario Default</asp:Label>
+                                    </a></li>
                         <% } %>
                     </ul>
 

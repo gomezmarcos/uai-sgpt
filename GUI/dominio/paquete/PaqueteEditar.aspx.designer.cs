@@ -7,135 +7,117 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GUI {
+namespace GUI.dominio.paquete {
     
     
-    public partial class SiteMaster {
+    public partial class PaqueteEditar {
         
         /// <summary>
-        /// masterLblInicio control.
+        /// txtTitulo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label masterLblInicio;
+        protected global::System.Web.UI.WebControls.TextBox txtTitulo;
         
         /// <summary>
-        /// masterLblSeguridad control.
+        /// txtDescripcion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label masterLblSeguridad;
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
         
         /// <summary>
-        /// masterLblUsuarios control.
+        /// txtPrecio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label masterLblUsuarios;
+        protected global::System.Web.UI.WebControls.TextBox txtPrecio;
         
         /// <summary>
-        /// masterLblBitacora control.
+        /// lstDestinos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label masterLblBitacora;
+        protected global::System.Web.UI.WebControls.ListBox lstDestinos;
         
         /// <summary>
-        /// masterLblBkp control.
+        /// lstTags control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label masterLblBkp;
+        protected global::System.Web.UI.WebControls.ListBox lstTags;
         
         /// <summary>
-        /// masterLblIdioma control.
+        /// lstHoteles control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label masterLblIdioma;
+        protected global::System.Web.UI.WebControls.ListBox lstHoteles;
         
         /// <summary>
-        /// masterLblPaquete control.
+        /// lstVuelos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label masterLblPaquete;
+        protected global::System.Web.UI.WebControls.ListBox lstVuelos;
         
         /// <summary>
-        /// masterLblHotel control.
+        /// tblFotos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label masterLblHotel;
+        protected global::System.Web.UI.WebControls.Table tblFotos;
         
         /// <summary>
-        /// masterLblVuelo control.
+        /// files control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label masterLblVuelo;
+        protected global::System.Web.UI.WebControls.FileUpload files;
         
         /// <summary>
-        /// masterLblRegistrarUsuario control.
+        /// btnCancelar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label masterLblRegistrarUsuario;
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
         
         /// <summary>
-        /// lstIdiomas control.
+        /// btnEditar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lstIdiomas;
+        protected global::System.Web.UI.WebControls.Button btnEditar;
         
         /// <summary>
-        /// LoginName1 control.
+        /// btnBorrar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginName LoginName1;
-        
-        /// <summary>
-        /// btnLogout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogout;
-        
-        /// <summary>
-        /// MainContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Button btnBorrar;
     }
 }

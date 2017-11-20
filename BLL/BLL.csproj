@@ -40,13 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HotelBll.cs" />
     <Compile Include="BllGenerica.cs" />
+    <Compile Include="PaqueteBll.cs" />
+    <Compile Include="DestinoBll.cs" />
+    <Compile Include="FotoBll.cs" />
+    <Compile Include="TagBll.cs" />
     <Compile Include="servicio\autenticacion\AutenticacionBll.cs" />
     <Compile Include="servicio\autorizacion\AutorizacionRamaBll.cs" />
     <Compile Include="servicio\autorizacion\AutorizacionBll.cs" />
     <Compile Include="servicio\bitacora\Bitacora.cs" />
     <Compile Include="servicio\bitacora\EventoBll.cs" />
+    <Compile Include="HotelBll.cs" />
     <Compile Include="servicio\encriptacion\Encriptador.cs" />
     <Compile Include="servicio\idioma\CulturaBll.cs" />
     <Compile Include="servicio\idioma\EntradaBll.cs" />
@@ -55,6 +59,7 @@
     <Compile Include="servicio\verificacion\VerificacionBll.cs" />
     <Compile Include="servicio\verificacion\VerificacionRecalculable.cs" />
     <Compile Include="UsuarioBll.cs" />
+    <Compile Include="VueloBll.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">

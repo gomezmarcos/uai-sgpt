@@ -26,5 +26,35 @@ namespace DAL
 
             return new SqlHelper().MapMany<Hotel>(dt);
         }
+
+        public bool ExisteRelacionConTag(long hotelId, long tagId)
+        {
+            string Consulta = "select * from  hotel_tag where hotelId = @P2 and tagId = @P1";
+            SqlHelper Helper = new SqlHelper();
+            SqlParameter[] Params = new SqlParameter[2];
+            Params[0] = Helper.CrearParametro("@P1", tagId);
+            Params[1] = Helper.CrearParametro("@P2", hotelId);
+            int cantidad = Helper.RetrieveScalar(Consulta, Params);
+            if (cantidad > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool ExisteRelacionConDestino(long hotelId, long destinoId)
+        {
+            string Consulta = "select * from  hotel_destino where hotel_id = @P2 and destino_id = @P1";
+            SqlHelper Helper = new SqlHelper();
+            SqlParameter[] Params = new SqlParameter[2];
+            Params[0] = Helper.CrearParametro("@P1", destinoId);
+            Params[1] = Helper.CrearParametro("@P2", hotelId);
+            int cantidad = Helper.RetrieveScalar(Consulta, Params);
+            if (cantidad > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

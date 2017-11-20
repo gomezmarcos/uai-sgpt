@@ -10,5 +10,14 @@ namespace BE
     {
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
+        public string Direccion { get; set; }
+        public string Latitud { get; set; }
+        public string Longitud { get; set; }
+        public string Habitaciones { get; set; }
+        public decimal Precio { get; set; }
+
+        public IList<Tag> tags { get; set; }
+        public IList<Foto> fotos { get; set; }
+        public IList<Destino> destinos { get; set; }
     }
 }

@@ -33,6 +33,11 @@ namespace BLL
             return u;
         }
 
+        public void RelacionarUsuarioPatente(long usuarioId, long patenteId)
+        {
+            usuarioDal.RelacionarUsuarioPatente(usuarioId, patenteId);
+        }
+
         public new void Eliminar(Usuario usuario)
         {
             //falta eliminar referencias de idioma y patente

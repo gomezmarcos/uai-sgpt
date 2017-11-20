@@ -21,6 +21,12 @@ namespace GUI
         private AutorizacionBll autorizacionBll = new AutorizacionBll();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                txtAlias.Focus();
+                txtAlias.Text = "";
+
+            }
         }
 
         /*

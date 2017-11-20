@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace DAL.dominio
 {
-    public class DestinoDal : DalGenerica<Destino>
+    public class TagDal : DalGenerica<Tag>
     {
         public override string GetTableNameFuck()
         {
-            return "Destino";
+            return "Tag";
         }
     }
 }

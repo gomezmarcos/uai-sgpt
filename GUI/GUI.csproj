@@ -128,6 +128,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="dominio\cliente\Buscar.aspx" />
+    <Content Include="dominio\hotel\HotelAbm.aspx" />
+    <Content Include="dominio\hotel\HotelAlta.aspx" />
+    <Content Include="dominio\hotel\HotelEditar.aspx" />
+    <Content Include="dominio\paquete\PaqueteAbm.aspx" />
+    <Content Include="dominio\paquete\PaqueteAlta.aspx" />
+    <Content Include="dominio\paquete\PaqueteEditar.aspx" />
+    <Content Include="dominio\usuario\RegistrarUsuario.aspx" />
+    <Content Include="dominio\vuelo\VueloAbm.aspx" />
+    <Content Include="dominio\vuelo\VueloAlta.aspx" />
+    <Content Include="dominio\vuelo\VueloEditar.aspx" />
     <Content Include="soporte\autenticar\Autenticar.aspx" />
     <Content Include="soporte\bitacora\Bitacora.aspx" />
     <Content Include="Contact.aspx" />
@@ -150,7 +161,6 @@
     <Content Include="soporte\patentes\PatenteAbm.aspx" />
     <Content Include="soporte\patentes\PatenteAlta.aspx" />
     <Content Include="soporte\patentes\PatenteEditar.aspx" />
-    <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -181,6 +191,9 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="soporte\usuarios\UsuarioSistemaAbm.aspx" />
+    <Content Include="soporte\usuarios\UsuarioSistemaAlta.aspx" />
+    <Content Include="soporte\usuarios\UsuarioSistemaEditar.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -196,6 +209,83 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="dominio\cliente\Buscar.aspx.cs">
+      <DependentUpon>Buscar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dominio\cliente\Buscar.aspx.designer.cs">
+      <DependentUpon>Buscar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dominio\hotel\HotelAbm.aspx.cs">
+      <DependentUpon>HotelAbm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dominio\hotel\HotelAbm.aspx.designer.cs">
+      <DependentUpon>HotelAbm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dominio\hotel\HotelAlta.aspx.cs">
+      <DependentUpon>HotelAlta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dominio\hotel\HotelAlta.aspx.designer.cs">
+      <DependentUpon>HotelAlta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dominio\hotel\HotelEditar.aspx.cs">
+      <DependentUpon>HotelEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dominio\hotel\HotelEditar.aspx.designer.cs">
+      <DependentUpon>HotelEditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dominio\paquete\PaqueteAbm.aspx.cs">
+      <DependentUpon>PaqueteAbm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dominio\paquete\PaqueteAbm.aspx.designer.cs">
+      <DependentUpon>PaqueteAbm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dominio\paquete\PaqueteAlta.aspx.cs">
+      <DependentUpon>PaqueteAlta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dominio\paquete\PaqueteAlta.aspx.designer.cs">
+      <DependentUpon>PaqueteAlta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dominio\paquete\PaqueteEditar.aspx.cs">
+      <DependentUpon>PaqueteEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dominio\paquete\PaqueteEditar.aspx.designer.cs">
+      <DependentUpon>PaqueteEditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dominio\usuario\RegistrarUsuario.aspx.cs">
+      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dominio\usuario\RegistrarUsuario.aspx.designer.cs">
+      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dominio\vuelo\VueloAbm.aspx.cs">
+      <DependentUpon>VueloAbm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dominio\vuelo\VueloAbm.aspx.designer.cs">
+      <DependentUpon>VueloAbm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dominio\vuelo\VueloAlta.aspx.cs">
+      <DependentUpon>VueloAlta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dominio\vuelo\VueloAlta.aspx.designer.cs">
+      <DependentUpon>VueloAlta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dominio\vuelo\VueloEditar.aspx.cs">
+      <DependentUpon>VueloEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dominio\vuelo\VueloEditar.aspx.designer.cs">
+      <DependentUpon>VueloEditar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="soporte\autenticar\Autenticar.aspx.cs">
       <DependentUpon>Autenticar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -284,6 +374,27 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
+    <Compile Include="soporte\usuarios\UsuarioSistemaAbm.aspx.cs">
+      <DependentUpon>UsuarioSistemaAbm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="soporte\usuarios\UsuarioSistemaAbm.aspx.designer.cs">
+      <DependentUpon>UsuarioSistemaAbm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="soporte\usuarios\UsuarioSistemaAlta.aspx.cs">
+      <DependentUpon>UsuarioSistemaAlta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="soporte\usuarios\UsuarioSistemaAlta.aspx.designer.cs">
+      <DependentUpon>UsuarioSistemaAlta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="soporte\usuarios\UsuarioSistemaEditar.aspx.cs">
+      <DependentUpon>UsuarioSistemaEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="soporte\usuarios\UsuarioSistemaEditar.aspx.designer.cs">
+      <DependentUpon>UsuarioSistemaEditar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="soporte\utiliadad\GuiHelper.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
@@ -292,17 +403,9 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="soporte\datos\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

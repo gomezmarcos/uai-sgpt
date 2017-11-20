@@ -39,11 +39,15 @@ namespace GUI.dominio.usuario
             u.FechaCreacion = new DateTime();
             u.FechaActualizacion = new DateTime();
 
+
             u.objPatente = ramaBll.Buscar(new Dictionary<string, object>
             {
                 {"codigo", "CLI" }
             });
             u.objPatente.Id = u.objPatente.Id;
+
+            usuarioBll.Registrar(u);
+            //usuarioBll.RelacionarUsuarioPatente(u.Id, u.objPatente.Id);
 
             Response.Redirect("~/Default", true);
         }
