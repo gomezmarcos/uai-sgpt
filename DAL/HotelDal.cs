@@ -16,6 +16,27 @@ namespace DAL
             return "Hotel";
         }
 
+        public new Hotel BuscarPorId(long id)
+        {
+            Hotel h = base.BuscarPorId(id);
+            return h;
+        }
+
+        public IList<int> BuscarFotosPorId(long hotelId)
+        {
+            
+            IList<int> resultado = new List<int>();
+            string Consulta = "select fotoId from hotel_foto hf where hf.hotelId = @P1";
+            SqlHelper Helper = new SqlHelper();
+            SqlParameter[] Params = new SqlParameter[1];
+            Params[0] = Helper.CrearParametro("@P1", hotelId);
+            DataTable dt = Helper.Retrieve(Consulta, Params);
+
+            foreach (DataRow row in dt.Rows)
+                resultado.Add(Int32.Parse(row[0].ToString()));
+            return resultado;
+        }
+
         public List<Hotel> buscarTodosPorDestinoId(long destinoId)
         {
             string Consulta = "select h.* from hotel h inner join hotel_destino hd on hd.hotel_id = h.id where hd.destino_id = @P1";

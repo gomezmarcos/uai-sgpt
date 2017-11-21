@@ -128,7 +128,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="dominio\cliente\Buscar.aspx" />
+    <Content Include="dominio\cliente\ConfirmarCompra.aspx" />
+    <Content Include="dominio\cliente\Gracias.aspx" />
+    <Content Include="dominio\cliente\Landing.aspx" />
     <Content Include="dominio\hotel\HotelAbm.aspx" />
     <Content Include="dominio\hotel\HotelAlta.aspx" />
     <Content Include="dominio\hotel\HotelEditar.aspx" />
@@ -142,8 +149,6 @@
     <Content Include="soporte\autenticar\Autenticar.aspx" />
     <Content Include="soporte\bitacora\Bitacora.aspx" />
     <Content Include="Contact.aspx" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
@@ -161,6 +166,10 @@
     <Content Include="soporte\patentes\PatenteAbm.aspx" />
     <Content Include="soporte\patentes\PatenteAlta.aspx" />
     <Content Include="soporte\patentes\PatenteEditar.aspx" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -215,6 +224,27 @@
     </Compile>
     <Compile Include="dominio\cliente\Buscar.aspx.designer.cs">
       <DependentUpon>Buscar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dominio\cliente\ConfirmarCompra.aspx.cs">
+      <DependentUpon>ConfirmarCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dominio\cliente\ConfirmarCompra.aspx.designer.cs">
+      <DependentUpon>ConfirmarCompra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dominio\cliente\Gracias.aspx.cs">
+      <DependentUpon>Gracias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dominio\cliente\Gracias.aspx.designer.cs">
+      <DependentUpon>Gracias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dominio\cliente\Landing.aspx.cs">
+      <DependentUpon>Landing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dominio\cliente\Landing.aspx.designer.cs">
+      <DependentUpon>Landing.aspx</DependentUpon>
     </Compile>
     <Compile Include="dominio\hotel\HotelAbm.aspx.cs">
       <DependentUpon>HotelAbm.aspx</DependentUpon>

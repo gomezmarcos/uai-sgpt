@@ -18,6 +18,13 @@ namespace DAL
             return "VUELO";
         }
 
+        public new Vuelo BuscarPorId(long id)
+        {
+            Vuelo v = base.BuscarPorId(id);
+
+            return v;
+        }
+
         public void RegistrarDestinos(Vuelo vuelo)
         {
             string Consulta = "insert into VUELO_DESTINO (vueloId, origenId, destinoId) values (@P1, @P2, @P3)";

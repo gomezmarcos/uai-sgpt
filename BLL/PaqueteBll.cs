@@ -18,16 +18,39 @@ namespace BLL.dominio
         private TagDal tagDal = new TagDal();
         private HotelDal hotelDal = new HotelDal();
         private VueloDal vueloDal = new VueloDal();
+        private VueloBll vueloBll = new VueloBll();
         private FotoDal fotoDal = new FotoDal();
+        private HotelBll hotelBll = new HotelBll();
 
         public override DalGenerica<Paquete> GetDal()
         {
             return dal;
         }
+        
+        public new Paquete BuscarPorId(long id)
+        {
+            Paquete p = base.BuscarPorId(id);
+            return popularComponentes(p);
+        }
+
+        public new IList<Paquete> BuscarTodosConLike(Dictionary<string, object> parametros)
+        {
+            IList<Paquete> respuesta = base.BuscarTodosConLike(parametros);
+            if (respuesta.Count == 0)
+            {
+                return new List<Paquete>();
+            }
+            return popularComponentes(respuesta);
+        }
 
         public new IList<Paquete> BuscarTodos()
         {
             IList<Paquete> paquetes = base.BuscarTodos();
+            return popularComponentes(paquetes);
+        }
+
+        private IList<Paquete> popularComponentes(IList<Paquete> paquetes)
+        {
             foreach (Paquete p in paquetes)
             {
                 p.Destinos = this.BuscarDestinosPorId(p.Id);
@@ -37,6 +60,16 @@ namespace BLL.dominio
                 p.Fotos = this.BuscarFotosPorId(p.Id);
             }
             return paquetes;
+        }
+
+        private Paquete popularComponentes(Paquete p)
+        {
+            p.Destinos = this.BuscarDestinosPorId(p.Id);
+            p.Tags = this.BuscarTagsPorId(p.Id);
+            p.Vuelos = this.BuscarVuelosPorId(p.Id);
+            p.Hoteles = this.BuscarHotelesPorId(p.Id);
+            p.Fotos = this.BuscarFotosPorId(p.Id);
+            return p;
         }
 
         public IList<Foto> BuscarFotosPorId(long id)
@@ -49,13 +82,18 @@ namespace BLL.dominio
             return resultado;
         }
 
+        public void Comprar(Usuario usuario, Paquete paquete)
+        {
+            dal.Comprar(usuario, paquete);
+        }
+
         public IList<Hotel> BuscarHotelesPorId(long id)
         {
             IList<Hotel> resultado = new List<Hotel>();
 
             IList<int> list = dal.BuscarHotelesPorId(id);
             foreach (int tagId in list)
-                resultado.Add(hotelDal.BuscarPorId(tagId));
+                resultado.Add(hotelBll.BuscarPorId(tagId)); // crear buscarPorId con componentes!
             return resultado;
         }
 
@@ -75,7 +113,7 @@ namespace BLL.dominio
 
             IList<int> list = dal.BuscarVuelosPorId(id);
             foreach (int tagId in list)
-                resultado.Add(vueloDal.BuscarPorId(tagId));
+                resultado.Add(vueloBll.BuscarPorId(tagId));
             return resultado;
         }
 

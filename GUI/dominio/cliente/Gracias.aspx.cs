@@ -5,17 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace GUI
+namespace GUI.dominio.cliente
 {
-    public partial class _Default : Page
+    public partial class Gracias : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-        }
 
-        protected void VerPaquetes_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("/dominio/cliente/Buscar.aspx", true);
         }
     }
 }

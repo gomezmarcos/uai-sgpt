@@ -58,5 +58,17 @@ namespace DAL.dominio
             return resultado;
         }
 
+        public void Comprar(Usuario usuario, Paquete paquete)
+        {
+            string Consulta = "insert into usuario_paquete (usuarioId,paqueteId,precio,fechaCreacion,fechaActualizacion) values (@P0, @P1,@P2,@P3,@P4)";
+            SqlParameter[] SelectParam = new SqlParameter[5];
+            SqlHelper Helper = new SqlHelper();
+            SelectParam[0] = Helper.CrearParametro("@P0", usuario.Id);
+            SelectParam[1] = Helper.CrearParametro("@P1", paquete.Id);
+            SelectParam[2] = Helper.CrearParametro("@P2", paquete.Precio);
+            SelectParam[3] = Helper.CrearParametro("@P3", DateTime.Now);
+            SelectParam[4] = Helper.CrearParametro("@P4", DateTime.Now);
+            Helper.Create(Consulta, SelectParam);
+        }
     }
 }

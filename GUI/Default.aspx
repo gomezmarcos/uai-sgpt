@@ -5,7 +5,7 @@
     <div class="jumbotron">
         <h1>SGPT</h1>
         <p class="lead">Sistema de Gestion de Paquetes Turisticos</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Aprenda mas &raquo;</a></p>
+        <p><asp:Button runat="server" ID="VerPaquetes" Text="Ver Paquetes >>" CssClass="btn btn-primary" OnClick="VerPaquetes_Click" /></p>
     </div>
 
     <div class="row">

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BE;
 using DAL;
 using DAL.dominio;
+using BLL.util;
 using System.Data.SqlClient;
 
 namespace BLL.dominio
@@ -14,6 +15,7 @@ namespace BLL.dominio
     {
         private HotelDal hotelDal = new HotelDal();
         private DestinoDal destinoDal = new DestinoDal();
+        private FotoBll fotoBll = new FotoBll();
         public override DalGenerica<Hotel> GetDal()
         {
             return hotelDal;
@@ -47,6 +49,20 @@ namespace BLL.dominio
             RegistrarDestinos(entity);
 
             return entity;
+        }
+
+        private Hotel PopularComponentes(Hotel h)
+        {
+            h.fotos = this.BuscarFotosPorId(h.Id);
+            return h;
+        }
+
+        private IList<Foto> BuscarFotosPorId(long id)
+        {
+            IList<Foto> resultado = new List<Foto>();
+            foreach (int fotoId in hotelDal.BuscarFotosPorId(id))
+                resultado.Add(fotoBll.BuscarPorId(fotoId));
+            return resultado;
         }
 
         private void RegistrarFotos(Hotel hotel)
@@ -149,6 +165,13 @@ namespace BLL.dominio
         public List<Hotel> buscarPorDestino(long destinoId)
         {
             return hotelDal.buscarTodosPorDestinoId(destinoId);
+        }
+
+        public new Hotel BuscarPorId(long id)
+        {
+            Hotel h = base.BuscarPorId(id);
+            h.fotos = BuscarFotosPorId(id);
+            return h;
         }
     }
 }

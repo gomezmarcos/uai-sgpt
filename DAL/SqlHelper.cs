@@ -138,6 +138,23 @@ namespace DAL
             return P;
         }
 
+        public SqlParameter CrearParametro(string Nombre, long Value)
+        {
+            SqlParameter P = new SqlParameter();
+            P.DbType = DbType.Int64;
+            P.ParameterName = Nombre;
+            P.Value = Value;
+            return P;
+        }
+        public SqlParameter CrearParametro(string Nombre, decimal Value)
+        {
+            SqlParameter P = new SqlParameter();
+            P.DbType = DbType.Decimal;
+            P.ParameterName = Nombre;
+            P.Value = Value;
+            return P;
+        }
+
         public SqlParameter CrearParametro(string Nombre, int Value)
         {
             SqlParameter P = new SqlParameter();
