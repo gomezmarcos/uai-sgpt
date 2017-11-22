@@ -38,10 +38,10 @@ namespace GUI
                             tag2.Add(h);
                             break;
                         }
-            }
             hoteles = hoteles.OrderByDescending(o => o.Puntos).ToList();
             tag1 = tag1.OrderByDescending(o => o.Puntos).ToList();
             tag2 = tag2.OrderByDescending(o => o.Puntos).ToList();
+            }
         }
 
         protected void VerPaquetes_Click(object sender, EventArgs e)
