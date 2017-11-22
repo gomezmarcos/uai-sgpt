@@ -76,7 +76,7 @@
                         <% } %>
                         <%
                             if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("BKP")) { %>
-                                <li><a runat="server" href="~/soporte/idioma/idiomaAbm">
+                                <li><a runat="server" href="~/soporte/backup/BackupAbm">
                                     <asp:Label runat="server" ID="masterLblBkp">BackUp/Restore Default</asp:Label>
                                     </a></li>
                         <% } %>
@@ -103,6 +103,18 @@
                             if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("VADM")) { %>
                                 <li><a runat="server" href="~/dominio/vuelo/vueloAbm">
                                     <asp:Label runat="server" ID="masterLblVuelo">Hoteles Default</asp:Label>
+                                    </a></li>
+                        <% } %>
+                        <%
+                            if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("HADM")) { %>
+                                <li><a runat="server" href="~/dominio/marketing/Calculo">
+                                    <asp:Label runat="server" ID="masterLblCalculo">Actualizar calculo de Hoteles</asp:Label>
+                                    </a></li>
+                        <% } %>
+                        <%
+                            if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("RVW")) { %>
+                                <li><a runat="server" href="~/dominio/cliente/resenaAbm">
+                                    <asp:Label runat="server" ID="masterLblResena">Crear Reseña</asp:Label>
                                     </a></li>
                         <% } %>
                         <%

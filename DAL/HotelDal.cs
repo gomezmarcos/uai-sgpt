@@ -22,6 +22,21 @@ namespace DAL
             return h;
         }
 
+        public IList<int> BuscarTagsPorId(long hotelId)
+        {
+            
+            IList<int> resultado = new List<int>();
+            string Consulta = "select tagId from hotel_tag ht where ht.hotelId = @P1";
+            SqlHelper Helper = new SqlHelper();
+            SqlParameter[] Params = new SqlParameter[1];
+            Params[0] = Helper.CrearParametro("@P1", hotelId);
+            DataTable dt = Helper.Retrieve(Consulta, Params);
+
+            foreach (DataRow row in dt.Rows)
+                resultado.Add(Int32.Parse(row[0].ToString()));
+            return resultado;
+        }
+
         public IList<int> BuscarFotosPorId(long hotelId)
         {
             
@@ -46,6 +61,16 @@ namespace DAL
             DataTable dt = Helper.Retrieve(Consulta, Params);
 
             return new SqlHelper().MapMany<Hotel>(dt);
+        }
+
+        public void ActualizarPuntaje(Hotel hotel)
+        {
+            string Consulta = "update hotel set puntos = @P1 where id = @P2";
+            SqlHelper Helper = new SqlHelper();
+            SqlParameter[] Params = new SqlParameter[2];
+            Params[0] = Helper.CrearParametro("@P1", hotel.Puntos);
+            Params[1] = Helper.CrearParametro("@P2", hotel.Id);
+            Helper.Update(Consulta, Params);
         }
 
         public bool ExisteRelacionConTag(long hotelId, long tagId)

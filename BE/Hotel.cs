@@ -15,7 +15,7 @@ namespace BE
         public string Longitud { get; set; }
         public string Habitaciones { get; set; }
         public decimal Precio { get; set; }
-
+        public int Puntos { get; set; }
         public IList<Tag> tags { get; set; }
         public IList<Foto> fotos { get; set; }
         public IList<Destino> destinos { get; set; }

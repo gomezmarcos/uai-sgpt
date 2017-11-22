@@ -94,6 +94,24 @@ namespace GUI {
         protected global::System.Web.UI.WebControls.Label masterLblVuelo;
         
         /// <summary>
+        /// masterLblCalculo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label masterLblCalculo;
+        
+        /// <summary>
+        /// masterLblResena control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label masterLblResena;
+        
+        /// <summary>
         /// masterLblRegistrarUsuario control.
         /// </summary>
         /// <remarks>

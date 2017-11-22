@@ -15,6 +15,11 @@
                 </div>
             </div>
         </div>
+        <asp:RequiredFieldValidator id="vUsuairo" runat="server"
+            ControlToValidate="txtAlias"
+            ErrorMessage="El Alias es un dato obligatorio."
+            ForeColor="Red">
+        </asp:RequiredFieldValidator>
 
         <div class="row">
             <div class="col-md-4">
@@ -24,6 +29,11 @@
                 </div>
             </div>
         </div>
+        <asp:RequiredFieldValidator id="vPassword" runat="server"
+            ControlToValidate="txtPassword"
+            ErrorMessage="El Password es un dato obligatorio."
+            ForeColor="Red">
+        </asp:RequiredFieldValidator>
 
         <div class="row">
             <div class="col-md-4">

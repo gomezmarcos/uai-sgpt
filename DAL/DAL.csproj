@@ -43,6 +43,9 @@
     <Compile Include="DalGenerica.cs" />
     <Compile Include="PaqueteDal.cs" />
     <Compile Include="FotoDal.cs" />
+    <Compile Include="ResenaPonderacionDal.cs" />
+    <Compile Include="ResenaDal.cs" />
+    <Compile Include="servicio\backup\BackupDal.cs" />
     <Compile Include="TagDal.cs" />
     <Compile Include="DestinoDal.cs" />
     <Compile Include="HotelDal.cs" />
@@ -78,7 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="servicio\autenticacion\" />
-    <Folder Include="servicio\backup\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

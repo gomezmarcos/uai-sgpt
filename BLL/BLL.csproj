@@ -44,6 +44,9 @@
     <Compile Include="PaqueteBll.cs" />
     <Compile Include="DestinoBll.cs" />
     <Compile Include="FotoBll.cs" />
+    <Compile Include="ResenaPonderacionBll.cs" />
+    <Compile Include="ResenaBll.cs" />
+    <Compile Include="servicio\backup\BackupBll.cs" />
     <Compile Include="TagBll.cs" />
     <Compile Include="servicio\autenticacion\AutenticacionBll.cs" />
     <Compile Include="servicio\autorizacion\AutorizacionRamaBll.cs" />
@@ -73,7 +76,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="log\" />
-    <Folder Include="servicio\backup\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

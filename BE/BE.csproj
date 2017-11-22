@@ -44,10 +44,13 @@
     <Compile Include="Destino.cs" />
     <Compile Include="Foto.cs" />
     <Compile Include="Hotel.cs" />
+    <Compile Include="ResenaPonderacion.cs" />
+    <Compile Include="Resena.cs" />
     <Compile Include="servicio\autenticacion\RespuestaAtenticacion.cs" />
     <Compile Include="servicio\autorizacion\IPatente.cs" />
     <Compile Include="servicio\autorizacion\Patente.cs" />
     <Compile Include="servicio\autorizacion\PatenteRama.cs" />
+    <Compile Include="servicio\backup\Backup.cs" />
     <Compile Include="servicio\bitacora\Evento.cs" />
     <Compile Include="servicio\idioma\Cultura.cs" />
     <Compile Include="servicio\idioma\Entrada.cs" />
@@ -60,8 +63,6 @@
     <Compile Include="Paquete.cs" />
     <Compile Include="Vuelo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="servicio\backup\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

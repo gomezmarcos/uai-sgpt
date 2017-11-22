@@ -16,9 +16,13 @@
             A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
             </p>
             <ul>
-                <li>Miami - $20.000</li>
-                <li>Caribe - $40.000</li>
-                <li>Mexico - $20.000</li>
+                <% foreach (var h in hoteles)
+                    {
+                        %>
+
+                <li><b><%=h.Nombre %></b> - $<%=h.Precio %> - <%=h.Puntos %> Puntos</li>
+
+                <%} %>
             </ul>
             <p>
                 <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Buscar mas destinos con playa &raquo;</a>
@@ -30,9 +34,13 @@
                 NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
             </p>
             <ul>
-                <li>Nueva Zelanda - $20.000</li>
-                <li>Bariloche - $40.000</li>
-                <li>Alemania - $20.000</li>
+                <% foreach (var h in tag1)
+                    {
+                        %>
+
+                <li><b><%=h.Nombre %></b> - $<%=h.Precio %> - <%=h.Puntos %> Puntos</li>
+
+                <%} %>
             </ul>
             <p>
                 <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Buscar mas destinos de invierno &raquo;</a>
@@ -44,9 +52,13 @@
                 You can easily find a web hosting company that offers the right mix of features and price for your applications.
             </p>
             <ul>
-                <li>Colonia del Sacramento - $20.000</li>
-                <li>Cartagena de Indias - $40.000</li>
-                <li>Buzios - $20.000</li>
+                <% foreach (var h in tag2)
+                    {
+                        %>
+
+                <li><b><%=h.Nombre %></b> - $<%=h.Precio %> - <%=h.Puntos %> Puntos</li>
+
+                <%} %>
             </ul>
             <p>
                 <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Buscar mas destinos romanticos &raquo;</a>

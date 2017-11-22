@@ -16,6 +16,7 @@ namespace BLL.dominio
         private HotelDal hotelDal = new HotelDal();
         private DestinoDal destinoDal = new DestinoDal();
         private FotoBll fotoBll = new FotoBll();
+        private TagBll tagBll = new TagBll();
         public override DalGenerica<Hotel> GetDal()
         {
             return hotelDal;
@@ -51,10 +52,32 @@ namespace BLL.dominio
             return entity;
         }
 
+        public new IList<Hotel> BuscarTodos()
+        {
+            IList<Hotel> hoteles = base.BuscarTodos();
+            foreach(Hotel h in hoteles)
+                PopularComponentes(h);
+            return hoteles;
+        }
+
+        public void ActualizarPuntaje(Hotel hotel)
+        {
+            hotelDal.ActualizarPuntaje(hotel);
+        }
+
         private Hotel PopularComponentes(Hotel h)
         {
             h.fotos = this.BuscarFotosPorId(h.Id);
+            h.tags = this.BuscarTagsPorId(h.Id);
             return h;
+        }
+
+        private IList<Tag> BuscarTagsPorId(long id)
+        {
+            IList<Tag> resultado = new List<Tag>();
+            foreach (int tagId in hotelDal.BuscarTagsPorId(id))
+                resultado.Add(tagBll.BuscarPorId(tagId));
+            return resultado;
         }
 
         private IList<Foto> BuscarFotosPorId(long id)

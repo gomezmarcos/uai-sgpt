@@ -136,9 +136,11 @@
     <Content Include="dominio\cliente\ConfirmarCompra.aspx" />
     <Content Include="dominio\cliente\Gracias.aspx" />
     <Content Include="dominio\cliente\Landing.aspx" />
+    <Content Include="dominio\cliente\ResenaAbm.aspx" />
     <Content Include="dominio\hotel\HotelAbm.aspx" />
     <Content Include="dominio\hotel\HotelAlta.aspx" />
     <Content Include="dominio\hotel\HotelEditar.aspx" />
+    <Content Include="dominio\marketing\Calculo.aspx" />
     <Content Include="dominio\paquete\PaqueteAbm.aspx" />
     <Content Include="dominio\paquete\PaqueteAlta.aspx" />
     <Content Include="dominio\paquete\PaqueteEditar.aspx" />
@@ -147,6 +149,7 @@
     <Content Include="dominio\vuelo\VueloAlta.aspx" />
     <Content Include="dominio\vuelo\VueloEditar.aspx" />
     <Content Include="soporte\autenticar\Autenticar.aspx" />
+    <Content Include="soporte\backup\BackupAbm.aspx" />
     <Content Include="soporte\bitacora\Bitacora.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\Site.css" />
@@ -246,6 +249,13 @@
     <Compile Include="dominio\cliente\Landing.aspx.designer.cs">
       <DependentUpon>Landing.aspx</DependentUpon>
     </Compile>
+    <Compile Include="dominio\cliente\ResenaAbm.aspx.cs">
+      <DependentUpon>ResenaAbm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dominio\cliente\ResenaAbm.aspx.designer.cs">
+      <DependentUpon>ResenaAbm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="dominio\hotel\HotelAbm.aspx.cs">
       <DependentUpon>HotelAbm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -266,6 +276,13 @@
     </Compile>
     <Compile Include="dominio\hotel\HotelEditar.aspx.designer.cs">
       <DependentUpon>HotelEditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dominio\marketing\Calculo.aspx.cs">
+      <DependentUpon>Calculo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dominio\marketing\Calculo.aspx.designer.cs">
+      <DependentUpon>Calculo.aspx</DependentUpon>
     </Compile>
     <Compile Include="dominio\paquete\PaqueteAbm.aspx.cs">
       <DependentUpon>PaqueteAbm.aspx</DependentUpon>
@@ -322,6 +339,13 @@
     </Compile>
     <Compile Include="soporte\autenticar\Autenticar.aspx.designer.cs">
       <DependentUpon>Autenticar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="soporte\backup\BackupAbm.aspx.cs">
+      <DependentUpon>BackupAbm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="soporte\backup\BackupAbm.aspx.designer.cs">
+      <DependentUpon>BackupAbm.aspx</DependentUpon>
     </Compile>
     <Compile Include="soporte\bitacora\Bitacora.aspx.cs">
       <DependentUpon>Bitacora.aspx</DependentUpon>
