@@ -23,6 +23,7 @@ namespace GUI
         {
             if (!IsPostBack)
             {
+
                 txtAlias.Focus();
                 txtAlias.Text = "";
 

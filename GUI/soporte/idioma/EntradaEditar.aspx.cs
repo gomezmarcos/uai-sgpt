@@ -16,23 +16,28 @@ namespace GUI.idioma
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            try
+            {
                 tbl.Rows.Clear();
                 TableHeaderRow hrow = new TableHeaderRow();
-                hrow.Cells.Add( new TableHeaderCell {Text = "Label"});
-                hrow.Cells.Add( new TableHeaderCell {Text = "Texto"});
+                hrow.Cells.Add(new TableHeaderCell { Text = "Label" });
+                hrow.Cells.Add(new TableHeaderCell { Text = "Texto" });
                 tbl.Rows.Add(hrow);
 
                 var idiomaId = Int64.Parse(Request.QueryString["id"]);
                 IList<Entrada> entradas = entradaBll.BuscarTodos(new Dictionary<String, object>
-                {
-                    { "fk_idioma", idiomaId }
-                }
-            );
+                    {
+                     { "fk_idioma", idiomaId }
+                    }
+                    );
 
-            foreach (Entrada p in entradas)
-                tbl.Rows.Add(CrearFila(p));
-
+                foreach (Entrada p in entradas)
+                    tbl.Rows.Add(CrearFila(p));
+            }
+            catch (Exception ex)
+            {
+                    Response.Redirect("~/soporte/error/DefaultRedirectError.aspx?msg=" + ex.Message ); //como si fuese mi login
+            }
         }
 
         private static TableRow CrearFila(Entrada entrada)

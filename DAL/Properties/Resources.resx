@@ -120,4 +120,7 @@
   <data name="StrSql" xml:space="preserve">
     <value>Data Source=ACQUI-ARG006;Initial Catalog=sgpt;Integrated Security=True</value>
   </data>
+  <data name="StrSql2" xml:space="preserve">
+    <value>Data Source=.\SQL_UAI;Initial Catalog=sgpt;Integrated Security=True</value>
+  </data>
 </root>

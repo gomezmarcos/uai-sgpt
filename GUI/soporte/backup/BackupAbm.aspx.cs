@@ -34,14 +34,18 @@ namespace GUI.soporte.backup
             
         }
 
+        //private string bkpPath = @"D:\bkp\"; 
+        //private string db = "[local./SQL_UAI]";
+        private string bkpPath = @"C:\bkp\"; 
+        private string db = @"[local.\ACQUI-ARG006]";
         private void BuscarArchivos()
         {
-            System.IO.Directory.CreateDirectory(Server.MapPath("~\\data\\bkup\\"));
-            IList<string> backups = System.IO.Directory.GetFiles(Server.MapPath("~\\data\\bkup\\"), "*.bak");
+            System.IO.Directory.CreateDirectory(bkpPath);
+            IList<string> backups = System.IO.Directory.GetFiles(bkpPath, "*.bak");
             foreach (string b in backups)
             {
                 ListItem li = new ListItem();
-                li.Text = b.ToString().Split('\\')[9].ToUpper();
+                li.Text = b.ToString().ToUpper();
                 li.Value = b.ToString();
                 lstBackupfiles.Items.Add(li);
             }
@@ -59,8 +63,8 @@ namespace GUI.soporte.backup
 
             Backup b = new Backup();
             b.Nombre = dbNombre;
-            b.Archivo = Server.MapPath("~\\data\\bkup\\") + archivo;
-            b.Server = "[local./SQLEXPRESS]";
+            b.Archivo = bkpPath + archivo;
+            b.Server = db;
 
             backupBll.CrearBackup(b);
             Response.Redirect("~/soporte/backup/backupAbm.aspx", true);
@@ -69,7 +73,7 @@ namespace GUI.soporte.backup
         protected void btnRestore_Click(object sender, EventArgs e)
         {
             Backup b = new Backup();
-            b.Server = "[local./SQLEXPRESS]";
+            b.Server = db;
             b.Nombre = lstBackupfiles.SelectedItem.Value;
             b.BaseDatos = "sgpt";
             backupBll.RestaurarBackup(b);

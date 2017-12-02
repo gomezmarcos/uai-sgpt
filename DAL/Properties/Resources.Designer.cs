@@ -68,5 +68,14 @@ namespace DAL.Properties {
                 return ResourceManager.GetString("StrSql", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Source=.\SQL_UAI;Initial Catalog=sgpt;Integrated Security=True.
+        /// </summary>
+        internal static string StrSql2 {
+            get {
+                return ResourceManager.GetString("StrSql2", resourceCulture);
+            }
+        }
     }
 }

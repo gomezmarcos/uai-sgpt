@@ -132,6 +132,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="soporte\error\DefaultRedirectError.aspx" />
     <Content Include="dominio\cliente\Buscar.aspx" />
     <Content Include="dominio\cliente\ConfirmarCompra.aspx" />
     <Content Include="dominio\cliente\Gracias.aspx" />
@@ -173,6 +174,7 @@
     <Content Include="Content\bootstrap-reboot.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -221,6 +223,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="soporte\error\DefaultRedirectError.aspx.cs">
+      <DependentUpon>DefaultRedirectError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="soporte\error\DefaultRedirectError.aspx.designer.cs">
+      <DependentUpon>DefaultRedirectError.aspx</DependentUpon>
+    </Compile>
     <Compile Include="dominio\cliente\Buscar.aspx.cs">
       <DependentUpon>Buscar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

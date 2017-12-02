@@ -17,5 +17,11 @@ namespace GUI
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        void Application_Error(object sender, EventArgs e)
+        {
+            Exception ex = Server.GetLastError();
+            Response.Redirect("~/soporte/error/DefaultRedirectError?ex=" + ex.Message); //como si fuese mi login
+        }
     }
 }

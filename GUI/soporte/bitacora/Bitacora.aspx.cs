@@ -26,6 +26,7 @@ namespace GUI
         //tambien guardo lo submiteado por el usuario (caso dropdownlist)
         protected void Page_Load(object sender, EventArgs e)
         {
+            throw new Exception();
             if (!Page.IsPostBack)
             {
                 filtro.Items.Add(new ListItem("", ""));
