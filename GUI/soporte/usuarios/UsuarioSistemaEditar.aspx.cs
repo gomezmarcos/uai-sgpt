@@ -8,6 +8,7 @@ using BE;
 using BE.servicio.autorizacion;
 using BLL;
 using BLL.servicio.autorizacion;
+using BLL.servicio.encriptacion;
 
 namespace GUI.soporte.usuarios
 {
@@ -22,6 +23,7 @@ namespace GUI.soporte.usuarios
         AutorizacionRamaBll autorizacionBll = new AutorizacionRamaBll();
         protected void Page_Load(object sender, EventArgs e)
         {
+            txtPassword.Attributes["type"] = "password";
             if (!IsPostBack)
             {
                 var usuarioId = Int64.Parse(Request.QueryString["id"]);
@@ -55,7 +57,13 @@ namespace GUI.soporte.usuarios
             Usuario u = bll.BuscarPorId(usuarioId);
             u.Alias = txtAlias.Text;
             u.Email = txtEmail.Text;
-            u.Contrasena = txtPassword.Text;
+            if (u.Contrasena.Equals(txtPassword.Text)) //hack para enmascarar edicion de contrasenas.
+            {
+                u.Contrasena = txtPassword.Text;
+            } else
+            {
+                u.Contrasena = Encriptador.Encriptar(txtPassword.Text);
+            }
 
             PatenteRama p = new PatenteRama();
             p.Id =  Int32.Parse( lstRol.SelectedValue);

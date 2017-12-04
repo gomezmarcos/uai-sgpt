@@ -30,7 +30,7 @@
     <div class="form-group">
         <asp:Button ID="btnCancelar" OnClick="btnCancelar_Click" runat="server" Text="Cancelar" CssClass="btn btn-primary" />
         <asp:Button ID="btnAceptar" OnClick="btnAceptar_Click" runat="server" Text="Editar Patente" CssClass="btn btn-primary" />
-        <asp:Button ID="btnBorrar" OnClick="btnBorrar_Click" runat="server" Text="Borrar Patente" CssClass="btn btn-danger" />
+        <asp:Button ID="btnBorrar" Enabled="false" OnClick="btnBorrar_Click" runat="server" Text="Borrar Patente" CssClass="btn btn-danger" />
     </div>
 
 </asp:Content>

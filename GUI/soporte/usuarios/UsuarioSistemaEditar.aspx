@@ -13,7 +13,7 @@
     </div>
     <div class="form-group">
         <label for="txtEmail">Email</label>
-        <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox>
+        <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" CssClass="form-control"></asp:TextBox>
     </div>
     <div class="form-group">
         <label for="lstRol">Rol</label>

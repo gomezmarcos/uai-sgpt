@@ -167,6 +167,7 @@
     <Content Include="soporte\idioma\EntradaEditar.aspx" />
     <Content Include="soporte\idioma\IdiomaAbm.aspx" />
     <Content Include="soporte\idioma\IdiomaEditar.aspx" />
+    <Content Include="soporte\integridad\Integridad.aspx" />
     <Content Include="soporte\patentes\PatenteAbm.aspx" />
     <Content Include="soporte\patentes\PatenteAlta.aspx" />
     <Content Include="soporte\patentes\PatenteEditar.aspx" />
@@ -400,6 +401,13 @@
     </Compile>
     <Compile Include="soporte\idioma\IdiomaEditar.aspx.designer.cs">
       <DependentUpon>IdiomaEditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="soporte\integridad\Integridad.aspx.cs">
+      <DependentUpon>Integridad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="soporte\integridad\Integridad.aspx.designer.cs">
+      <DependentUpon>Integridad.aspx</DependentUpon>
     </Compile>
     <Compile Include="soporte\patentes\PatenteAbm.aspx.cs">
       <DependentUpon>PatenteAbm.aspx</DependentUpon>

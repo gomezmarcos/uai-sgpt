@@ -43,6 +43,11 @@
     <Compile Include="DalGenerica.cs" />
     <Compile Include="PaqueteDal.cs" />
     <Compile Include="FotoDal.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ResenaPonderacionDal.cs" />
     <Compile Include="ResenaDal.cs" />
     <Compile Include="servicio\backup\BackupDal.cs" />
@@ -55,11 +60,6 @@
     <Compile Include="servicio\idioma\CulturaDal.cs" />
     <Compile Include="servicio\idioma\EntradaDal.cs" />
     <Compile Include="servicio\idioma\IdiomaDal.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="servicio\verificacion\VerificacionDal.cs" />
     <Compile Include="SqlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,13 +74,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="servicio\autenticacion\" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="servicio\autenticacion\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

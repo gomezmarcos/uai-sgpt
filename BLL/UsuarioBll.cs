@@ -14,7 +14,6 @@ namespace BLL
     public class UsuarioBll : AbstractBll<Usuario>, VerificacionRecalculable
     {
         private UsuarioDal usuarioDal = new UsuarioDal();
-        private VerificacionBll verificacionBll = new VerificacionBll();
 
         public override DalGenerica<Usuario> GetDal()
         {
@@ -55,6 +54,7 @@ namespace BLL
 
         public void Recalcular<T>() where T : IVerificable
         {
+            VerificacionBll verificacionBll = new VerificacionBll();
             verificacionBll.recalcular<Usuario>(this);//actualizar entidad Verificacion DVV
         }
     }

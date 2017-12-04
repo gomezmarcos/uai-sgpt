@@ -29,11 +29,6 @@ namespace GUI.soporte.usuarios
             }
         }
 
-        protected void lstRol_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btnNuevo_Click(object sender, EventArgs e)
         {
             Usuario u = new Usuario();
@@ -43,12 +38,13 @@ namespace GUI.soporte.usuarios
             u.Email = txtEmail.Text;
             u.FechaCreacion = new DateTime();
             u.FechaActualizacion = new DateTime();
+            u.verificacion = u.GenerarVerificacion();
 
             u.objPatente = new PatenteRama();
             u.objPatente.Id = Int32.Parse(lstRol.Text);
 
             usuarioBll.Registrar(u);
-
+            Response.Redirect("UsuarioSistemaAbm.aspx", true);
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

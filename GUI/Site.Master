@@ -88,6 +88,12 @@
                         <% } %>
 
                         <%
+                            if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("VER")) { %>
+                                <li><a runat="server" href="~/soporte/integridad/integridad">
+                                    <asp:Label runat="server" ID="masterLblVerificacion">Integridad Default</asp:Label>
+                                    </a></li>
+                        <% } %>
+                        <%
                             if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("PQADM")) { %>
                                 <li><a runat="server" href="~/dominio/paquete/paqueteAbm">
                                     <asp:Label runat="server" ID="masterLblPaquete">Paquetes Default</asp:Label>
@@ -106,7 +112,7 @@
                                     </a></li>
                         <% } %>
                         <%
-                            if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("HADM")) { %>
+                            if ( usuario != null && usuario.objPatente.EsPatenteValidaParaElUsuario("MKTCLC")) { %>
                                 <li><a runat="server" href="~/dominio/marketing/Calculo">
                                     <asp:Label runat="server" ID="masterLblCalculo">Actualizar calculo de Hoteles</asp:Label>
                                     </a></li>

@@ -54,7 +54,7 @@ namespace DAL.utilitarios
                 string propertyName = property.Name.ToLower();
                 if (propertyName != COLUMNA_FECHA_CREACION 
                     && propertyName != COLUMNA_FECHA_ACTUALIZACION 
-                    && propertyName != COLUMNA_VERIFICACION 
+                    //&& propertyName != COLUMNA_VERIFICACION 
                     && propertyName != "id"
                     && !propertyName.StartsWith("obj")
                     && !property.PropertyType.Name.StartsWith("IList")
@@ -89,7 +89,7 @@ namespace DAL.utilitarios
                 string propertyName = property.Name.ToLower();
                 if (propertyName != COLUMNA_FECHA_CREACION 
                     && propertyName != COLUMNA_FECHA_ACTUALIZACION 
-                    && propertyName != COLUMNA_VERIFICACION 
+                    //&& propertyName != COLUMNA_VERIFICACION 
                     && propertyName != "id"
                     && !propertyName.StartsWith("obj")
                     && !property.PropertyType.Name.StartsWith("IList")

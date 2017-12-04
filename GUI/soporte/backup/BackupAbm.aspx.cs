@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BLL.servicio.backup;
 using BE.servicio.backup;
+using System.Web.Security;
 
 namespace GUI.soporte.backup
 {
@@ -59,7 +60,9 @@ namespace GUI.soporte.backup
                 + DateTime.Now.Year.ToString() + "_"
                 + DateTime.Now.Month.ToString() + "_"
                 + DateTime.Now.Day.ToString() + "_"
-                + DateTime.Now.Millisecond.ToString() + ".bak";
+                + DateTime.Now.Hour.ToString() + "_"
+                + DateTime.Now.Minute.ToString() + "_"
+                + DateTime.Now.Second.ToString() + ".bak";
 
             Backup b = new Backup();
             b.Nombre = dbNombre;
@@ -77,7 +80,13 @@ namespace GUI.soporte.backup
             b.Nombre = lstBackupfiles.SelectedItem.Value;
             b.BaseDatos = "sgpt";
             backupBll.RestaurarBackup(b);
-            Response.Redirect("~/soporte/backup/backupAbm.aspx", true);
+//            Response.Redirect("~/soporte/backup/backupAbm.aspx", true);
+
+            HttpContext.Current.Session.Clear();
+            HttpContext.Current.Session.Abandon();
+            ViewState.Clear();
+            FormsAuthentication.SignOut();
+            Response.Redirect("~/soporte/autenticar/Autenticar");
         }
     }
 }

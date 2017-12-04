@@ -26,7 +26,7 @@ namespace BE
 
         public string GenerarVerificacion()
         {
-            return Alias+0;
+            return Alias+Email+0;
         }
     }
 }

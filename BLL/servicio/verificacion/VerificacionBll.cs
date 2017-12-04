@@ -7,6 +7,7 @@ using BE;
 using BE.servicio.verificacion;
 using DAL.servicio.verificacion;
 using DAL;
+using BLL.servicio.encriptacion;
 
 namespace BLL.servicio.verificacion
 {
@@ -28,9 +29,30 @@ namespace BLL.servicio.verificacion
             Dictionary<string, object> propiedades = new Dictionary<string, object>();
             propiedades.Add("entidad", typeof(T).Name);
             Verificacion verificacion = base.BuscarTodos(propiedades)[0];
-            verificacion.Hash = hash.GetHashCode().ToString();
+            verificacion.Hash = Encriptador.Encriptar(hash);
 
             dal.Modificar(verificacion);
+        }
+
+        public String verificarIntegridad()
+        {
+            String hash = "";
+            UsuarioBll usuarioBll = new UsuarioBll();
+            foreach (Usuario u in usuarioBll.BuscarTodos())
+            {
+                if (!u.verificacion.Equals(u.GenerarVerificacion()))
+                {
+                    return "La verificacion del usuario con ID " + u.Id + " no ha sido satisfactoria. Se necesita restaurar el sistema.";
+                }
+                hash += u.verificacion;
+            }
+            Verificacion verificacion = dal.BuscarPorId(1);
+            if (!verificacion.Hash.Equals(Encriptador.Encriptar(hash)))
+            {
+                return "La verificacion no ha sido satisfactoria. Algun registro ha sido agregado o eliminado de la tabla Usuario";
+            }
+            return "Verificacion exitosa";
+
         }
     }
 }

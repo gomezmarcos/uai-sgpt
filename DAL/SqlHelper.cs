@@ -12,7 +12,7 @@ namespace DAL
     public class SqlHelper
     {
 
-        String strCon = DAL.Properties.Resources.StrSql;
+        String strCon = DAL.Properties.Resources.StrSqlDEV;
         #region CRUD
         public int Create(string Consulta, SqlParameter[] Params)
         {

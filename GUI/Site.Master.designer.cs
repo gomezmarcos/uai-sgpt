@@ -67,6 +67,15 @@ namespace GUI {
         protected global::System.Web.UI.WebControls.Label masterLblIdioma;
         
         /// <summary>
+        /// masterLblVerificacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label masterLblVerificacion;
+        
+        /// <summary>
         /// masterLblPaquete control.
         /// </summary>
         /// <remarks>

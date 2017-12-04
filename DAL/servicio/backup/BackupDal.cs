@@ -36,7 +36,10 @@ namespace DAL.servicio.backup
         public void RestaurarBackup(Backup b)
         {
             SqlHelper Helper = new SqlHelper();
+            Helper.Update("ALTER DATABASE [sgpt] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;", null);
             Helper.Update("USE MASTER; RESTORE DATABASE " + b.BaseDatos + " FROM DISK = '" + b.Nombre + "'" + " WITH REPLACE", null);
+            Helper.Update("ALTER DATABASE[sgpt] SET ONLINE;", null);
+            Helper.Update("ALTER DATABASE[sgpt] SET MULTI_USER;", null);
         }
 
         public void CrearBackup(Backup b)

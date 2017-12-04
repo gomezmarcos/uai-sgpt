@@ -9,7 +9,7 @@
     </div>
     <div class="form-group">
         <label for="txtPassword">Password</label>
-        <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control"></asp:TextBox>
+        <asp:TextBox TextMode="Password" ID="txtPassword" runat="server" CssClass="form-control"></asp:TextBox>
     </div>
     <div class="form-group">
         <label for="txtEmail">Email</label>

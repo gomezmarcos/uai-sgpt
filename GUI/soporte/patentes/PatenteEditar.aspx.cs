@@ -13,6 +13,7 @@ namespace GUI.patentes
     {
         AutorizacionBll bll = new AutorizacionBll();
         AutorizacionRamaBll ramabll = new AutorizacionRamaBll();
+        List<string> patentesDeSistema = new List<string> {"TADM", "MKT", "CLI"};
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -22,6 +23,8 @@ namespace GUI.patentes
                 IPatente patenteValida = bll.ObtenerPatentePorPatente(Int64.Parse(ramaId));
                 txtCodigo.Text = patenteValida.GetCodigoPatente();
                 txtDescripcion.Text = ((PatenteRama)patenteValida).Descripcion;
+
+                btnBorrar.Enabled = !patentesDeSistema.Contains(patenteValida.GetCodigoPatente());
 
                 IList<Patente> patentes = bll.BuscarTodos(new Dictionary<String, object>
                 { { "fk_patente", null } } );

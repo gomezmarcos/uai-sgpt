@@ -63,18 +63,18 @@ namespace DAL.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Data Source=ACQUI-ARG006;Initial Catalog=sgpt;Integrated Security=True.
         /// </summary>
-        internal static string StrSql {
+        internal static string StrSqlDEV {
             get {
-                return ResourceManager.GetString("StrSql", resourceCulture);
+                return ResourceManager.GetString("StrSqlDEV", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Data Source=.\SQL_UAI;Initial Catalog=sgpt;Integrated Security=True.
         /// </summary>
-        internal static string StrSql2 {
+        internal static string StrSqlPROD {
             get {
-                return ResourceManager.GetString("StrSql2", resourceCulture);
+                return ResourceManager.GetString("StrSqlPROD", resourceCulture);
             }
         }
     }

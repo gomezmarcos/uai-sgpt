@@ -9,7 +9,7 @@
     </div>
     <div class="form-group">
         <label for="txtPassword">Password</label>
-        <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control"></asp:TextBox>
+        <asp:TextBox ID="txtPassword" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
     </div>
     <div class="form-group">
         <label for="txtEmail">Email</label>
@@ -17,7 +17,7 @@
     </div>
     <div class="form-group">
         <label for="lstRol">Rol</label>
-        <asp:DropDownList ID="lstRol" runat="server" CssClass="form-control" OnSelectedIndexChanged="lstRol_SelectedIndexChanged" AutoPostBack="true" ></asp:DropDownList>
+        <asp:DropDownList ID="lstRol" runat="server" CssClass="form-control" AutoPostBack="true" ></asp:DropDownList>
     </div>
     <div class="form-group">
         <asp:Button ID="btnCancelar" OnClick="btnCancelar_Click" runat="server" Text="Cancelar" CssClass="btn btn-primary" />
