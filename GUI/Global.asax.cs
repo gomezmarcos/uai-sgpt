@@ -21,7 +21,16 @@ namespace GUI
         void Application_Error(object sender, EventArgs e)
         {
             Exception ex = Server.GetLastError();
-            Response.Redirect("~/soporte/error/DefaultRedirectError?ex=" + ex.Message); //como si fuese mi login
+            string sms = ex.InnerException.Message.Replace("\"", "\'");
+            sms = sms.Replace("\r\n", " ");
+
+            if(Session["usuario"] == null)
+            {
+                Response.Redirect("~/soporte/error/FatalRedirectError?ex=" + sms );
+            } else
+            {
+                Response.Redirect("~/soporte/error/DefaultRedirectError?ex=" + sms);
+            }
         }
     }
 }

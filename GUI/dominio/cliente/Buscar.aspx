@@ -46,7 +46,8 @@
                 <div class="col-md-3">
                     <% if (p.Fotos.Count > 0)
                         { %>
-                        <img src="<%= p.Fotos[0].path %>" alt="..." class="img-thumbnail">
+                        <img src="<%=p.Fotos[0].path %>" alt="con path" class="img-thumbnail">
+
                     <%} else {
                             %>
                         <img src="..." alt="..." class="img-thumbnail">

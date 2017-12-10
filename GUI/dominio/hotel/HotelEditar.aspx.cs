@@ -129,9 +129,10 @@ namespace GUI.dominio.hotel
             {
                 foreach (HttpPostedFile ff in files.PostedFiles)
                 {
-                    System.IO.Directory.CreateDirectory(Server.MapPath("~\\fotos\\hotel\\" + hotelId ));
+                    System.IO.Directory.CreateDirectory(Server.MapPath("~") + "\\fotos\\hotel\\" + hotelId );
                     string fn = System.IO.Path.GetFileName(ff.FileName);
                     string SaveLocation = Server.MapPath("~") + "\\fotos\\hotel\\" + hotelId + "\\" + fn;
+
                     Foto f = new Foto
                     {
                         nombre = fn,

@@ -14,7 +14,7 @@ namespace GUI
         protected void Page_Load(object sender, EventArgs e)
         {
             String exeptionMessage = Request.Params["ex"];
-            this.Message = exeptionMessage;
+            this.Message = exeptionMessage == null ? "" : exeptionMessage ;
         }
 
         protected void btnHome_Click(object sender, EventArgs e)

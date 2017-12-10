@@ -37,8 +37,8 @@ namespace GUI.soporte.backup
 
         //private string bkpPath = @"D:\bkp\"; 
         //private string db = "[local./SQL_UAI]";
-        private string bkpPath = @"C:\bkp\"; 
-        private string db = @"[local.\ACQUI-ARG006]";
+        private string bkpPath = GUI.Properties.Resources.ContentPath + @"bkup\";
+        private string db = GUI.Properties.Resources.DbServer;
         private void BuscarArchivos()
         {
             System.IO.Directory.CreateDirectory(bkpPath);
@@ -80,7 +80,6 @@ namespace GUI.soporte.backup
             b.Nombre = lstBackupfiles.SelectedItem.Value;
             b.BaseDatos = "sgpt";
             backupBll.RestaurarBackup(b);
-//            Response.Redirect("~/soporte/backup/backupAbm.aspx", true);
 
             HttpContext.Current.Session.Clear();
             HttpContext.Current.Session.Abandon();

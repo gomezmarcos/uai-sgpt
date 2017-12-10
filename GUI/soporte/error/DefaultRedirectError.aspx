@@ -9,3 +9,4 @@
         <asp:Button runat="server" id="btnHome" OnClick="btnHome_Click" CssClass="btn btn-primary" Text="Redirigir al Inicio"/>
     </div>
 </asp:Content>
+

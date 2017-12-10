@@ -2,11 +2,16 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
-        <h1>SGPT</h1>
+   <div style="width:100%;
+  height:100%;
+  min-height:300px;
+  height:calc(100% - 1px);
+  background-image:url('/fotos/sistema/sgpt-buscar.jpg');
+  background-size:cover; color:white; padding:30px; margin-bottom:20px"> 
+        <h1 style="margin-top:200px">Encontra los mejores Paquetes Turisticos</h1>
         <p class="lead">Sistema de Gestion de Paquetes Turisticos</p>
         <p><asp:Button runat="server" ID="VerPaquetes" Text="Ver Paquetes >>" CssClass="btn btn-primary" OnClick="VerPaquetes_Click" /></p>
-    </div>
+  </div>     
 
     <div class="row">
         <div class="col-md-4">

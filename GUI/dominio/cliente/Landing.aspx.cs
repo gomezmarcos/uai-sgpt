@@ -15,6 +15,7 @@ namespace GUI.dominio.cliente
 
         PaqueteBll paqueteBll = new PaqueteBll();
         HotelBll hotelBll = new HotelBll();
+        public string path = GUI.Properties.Resources.ContentPath;
 
         public Paquete p = new Paquete();
 

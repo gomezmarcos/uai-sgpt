@@ -164,6 +164,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="soporte\error\FatalRedirectError.aspx" />
     <Content Include="soporte\idioma\EntradaEditar.aspx" />
     <Content Include="soporte\idioma\IdiomaAbm.aspx" />
     <Content Include="soporte\idioma\IdiomaEditar.aspx" />
@@ -224,6 +225,18 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
     <Compile Include="soporte\error\DefaultRedirectError.aspx.cs">
       <DependentUpon>DefaultRedirectError.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -381,6 +394,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="soporte\error\FatalRedirectError.aspx.cs">
+      <DependentUpon>FatalRedirectError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="soporte\error\FatalRedirectError.aspx.designer.cs">
+      <DependentUpon>FatalRedirectError.aspx</DependentUpon>
+    </Compile>
     <Compile Include="soporte\idioma\EntradaEditar.aspx.cs">
       <DependentUpon>EntradaEditar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -481,6 +501,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -497,6 +518,12 @@
       <Project>{936c6e43-e606-46cc-a569-631a105a8f6e}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

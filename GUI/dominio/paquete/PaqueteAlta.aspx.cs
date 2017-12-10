@@ -127,7 +127,7 @@ namespace GUI.dominio.paquete
             {
                 foreach (HttpPostedFile ff in files.PostedFiles)
                 {
-                    System.IO.Directory.CreateDirectory(Server.MapPath("~\\fotos\\paquete\\" + entidadId ));
+                    System.IO.Directory.CreateDirectory(Server.MapPath("~") + "\\fotos\\paquete\\" + entidadId );
                     string fn = System.IO.Path.GetFileName(ff.FileName);
                     string SaveLocation = Server.MapPath("~") + "\\fotos\\paquete\\" + entidadId + "\\" + fn;
                     Foto f = new Foto

@@ -39,6 +39,7 @@
         <asp:Table ID="tblFotos" runat="server" CssClass="table table-striped" ></asp:Table>
         <label for="files">Files</label>
         <asp:FileUpload runat="server" ID="files" AllowMultiple="true"></asp:FileUpload>
+        <asp:Image runat="server" ID="imagenPrincipal" />
     </div>
 
     <div class="form-group">

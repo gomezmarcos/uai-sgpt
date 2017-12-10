@@ -20,7 +20,6 @@ namespace GUI.dominio.paquete
         private PaqueteBll paqueteBll = new PaqueteBll();
         private FotoBll fotoBll = new FotoBll();
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
             var paqueteId = Int64.Parse(Request.QueryString["id"]);
@@ -115,6 +114,13 @@ namespace GUI.dominio.paquete
             }
 
             }
+
+            if (paquete.Fotos.Count>0)
+            {
+                Foto f = paquete.Fotos[0];
+                imagenPrincipal.ImageUrl = f.path;
+                imagenPrincipal.AlternateText = f.nombre;
+            }
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
@@ -192,7 +198,7 @@ namespace GUI.dominio.paquete
             {
                 foreach (HttpPostedFile ff in files.PostedFiles)
                 {
-                    System.IO.Directory.CreateDirectory(Server.MapPath("~\\fotos\\paquete\\" + entidadId ));
+                    System.IO.Directory.CreateDirectory(Server.MapPath("~") + "\\fotos\\paquete\\" + entidadId );
                     string fn = System.IO.Path.GetFileName(ff.FileName);
                     string SaveLocation = Server.MapPath("~") + "\\fotos\\paquete\\" + entidadId + "\\" + fn;
                     Foto f = new Foto
