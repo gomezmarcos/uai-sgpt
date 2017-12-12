@@ -1,0 +1,11 @@
+*.cache
+.vs
+GUI/obj/
+*/bin/
+GUI/data
+GUI/fotos
+
+BE/obj
+BLL/obj
+DAL/obj
+Test/obj
