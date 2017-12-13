@@ -13,8 +13,29 @@
     </div>
     <div class="form-group">
         <label for="txtEmail">Email</label>
-        <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox>
+        <asp:TextBox ID="txtEmail" TextMode="Email" runat="server" CssClass="form-control"></asp:TextBox>
     </div>
+
+    <asp:RequiredFieldValidator id="ValidatorAlias" runat="server"
+        ControlToValidate="txtAlias"
+        ErrorMessage="El alias es obligatorio"
+        ForeColor="Red">
+    </asp:RequiredFieldValidator>
+    <asp:RequiredFieldValidator id="ValidatorEmail" runat="server"
+        ControlToValidate="txtEmail"
+        ErrorMessage="El email es obligatorio"
+        ForeColor="Red">
+    </asp:RequiredFieldValidator>
+    <asp:RequiredFieldValidator id="ValidatorPassword" runat="server"
+        ControlToValidate="txtPassword"
+        ErrorMessage="El password es obligatorio"
+        ForeColor="Red">
+    </asp:RequiredFieldValidator>
+    <asp:RegularExpressionValidator runat=server 
+            ControlToValidate="txtPassword" 
+            ErrorMessage="El password debe tener entre 6 y 10 caracteres" 
+            ForeColor="Red"
+            ValidationExpression="[a-zA-Z0-9]{6,10}" />
 
     <div class="form-group">
         <asp:Button ID="btnCancelar" OnClick="btnCancelar_Click"  runat="server" Text="Cancelar" CssClass="btn btn-primary" />

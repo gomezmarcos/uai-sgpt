@@ -18,13 +18,19 @@
 
     <div class="form-group">
         <label for="txtVencimiento">Fecha de vencimiento</label>
-        <asp:TextBox ID="txtVencimiento" Rows="3" runat="server" CssClass="form-control"></asp:TextBox>
+        <asp:TextBox ID="txtVencimiento" TextMode="Date" Rows="3" runat="server" CssClass="form-control"></asp:TextBox>
     </div>
     <asp:RequiredFieldValidator id="ValidatorVencimiento" runat="server"
         ControlToValidate="txtVencimiento"
         ErrorMessage="La fecha de vencimiento es obligatoria."
         ForeColor="Red">
     </asp:RequiredFieldValidator>
+    <asp:RegularExpressionValidator runat=server 
+            ControlToValidate="txtVencimiento" 
+            ErrorMessage="El formato de fecha debe ser dd/mm/yyyy" 
+            ForeColor="Red"
+            ValidationExpression="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" />
+    
 
     <div class="form-group">
         <label for="txtTarjeta">Numero de tarjeta</label>
@@ -47,7 +53,7 @@
     </asp:RequiredFieldValidator>
 
     <div class="form-group">
-        <asp:Button ID="btnCancelar" OnClick="btnCancelar_Click" runat="server" Text="Cancelar" CssClass="btn btn-primary" />
+        <a href="/dominio/cliente/Buscar" class="btn btn-primary">Cancelar</a>
         <asp:Button ID="btnConfirmar" OnClick="btnConfirmar_Click" runat="server" Text="Confirmar compra"  CssClass="btn btn-danger" />
     </div>
 </asp:Content>

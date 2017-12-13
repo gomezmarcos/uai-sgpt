@@ -29,10 +29,5 @@ namespace GUI.dominio.cliente
             paqueteBll.Comprar(usuario, p);
             Response.Redirect("Gracias.aspx", true);
         }
-
-        protected void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Buscar.aspx", true);
-        }
     }
 }
