@@ -118,9 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ContentPath" xml:space="preserve">
-    <value>C:\sgpt\</value>
+    <value>D:\sgpt\</value>
   </data>
   <data name="DbServer" xml:space="preserve">
-    <value>[local.\ACQUI-ARG006]</value>
+    <value>[.\SQL_UAI]</value>
   </data>
 </root>

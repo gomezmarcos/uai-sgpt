@@ -82,7 +82,7 @@ namespace GUI.dominio.hotel
                     System.IO.Directory.CreateDirectory(Server.MapPath("~") + @"\fotos\hotel\" + hotelId );
 
                     string fn = System.IO.Path.GetFileName(ff.FileName);
-                    string SaveLocation = Server.MapPath(Server.MapPath("~") + @"\fotos\hotel\" + hotelId + "\\" + fn);
+                    string SaveLocation = Server.MapPath("~") + @"\fotos\hotel\" + hotelId + "\\" + fn;
                     Foto f = new Foto
                     {
                         nombre = fn,

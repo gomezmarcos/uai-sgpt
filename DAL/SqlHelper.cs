@@ -12,7 +12,7 @@ namespace DAL
     public class SqlHelper
     {
 
-        String strCon = DAL.Properties.Resources.StrSqlDEV;
+        String strCon = @"Data Source=.\SQL_UAI;Initial Catalog=sgpt;Integrated Security=True";
         #region CRUD
         public int Create(string Consulta, SqlParameter[] Params)
         {
@@ -47,15 +47,26 @@ namespace DAL
 
         public DataTable Retrieve(string Consulta, SqlParameter[] Params)
         {
-            SqlDataAdapter da = new SqlDataAdapter();
-            da.SelectCommand = new SqlCommand();
-            da.SelectCommand.Connection = new SqlConnection(strCon);
-            da.SelectCommand.CommandType = CommandType.Text;
-            da.SelectCommand.CommandText = Consulta;
-            if (Params != null)
-                da.SelectCommand.Parameters.AddRange(Params);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+                DataTable dt = new DataTable();
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = new SqlCommand();
+                da.SelectCommand.Connection = new SqlConnection(strCon);
+                da.SelectCommand.CommandType = CommandType.Text;
+                da.SelectCommand.CommandText = Consulta;
+                if (Params != null)
+                    da.SelectCommand.Parameters.AddRange(Params);
+                da.Fill(dt);
+            } catch (Exception e)
+            {
+                System.IO.StreamWriter sw = new System.IO.StreamWriter(@"D:\log.txt");
+                sw.WriteLine(e.Message);
+                sw.Close();
+                 sw = new System.IO.StreamWriter(@"D:\log.txt");
+                sw.WriteLine(DAL.Properties.Resources.StrSqlDEV);
+                sw.Close();
+            }
             return dt;
         }
         public int RetrieveScalar(string Consulta, SqlParameter[] Params)

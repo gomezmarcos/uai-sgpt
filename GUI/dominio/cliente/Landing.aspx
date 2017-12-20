@@ -51,7 +51,7 @@
                 <div class="image">
                 <% if (h.fotos != null && h.fotos.Count > 0)
                     { %>
-                        <img src="<%=path %>"<%= h.fotos[0].path %>" alt="<%=h.fotos[0].nombre %>"  class="img-thumbnail">
+                        <img src="<%= h.fotos[0].path %>" alt="<%=h.fotos[0].nombre %>"  class="img-thumbnail">
                 <% } else { %>
                         <img src="/fotos/sistema/sgpt-default-hotel.jpg" style="max-height:10px" class="img-thumbnail">
                 <% } %>

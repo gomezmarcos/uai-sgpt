@@ -61,7 +61,7 @@ namespace GUI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to C:\sgpt\.
+        ///   Looks up a localized string similar to D:\sgpt\.
         /// </summary>
         internal static string ContentPath {
             get {
@@ -70,7 +70,7 @@ namespace GUI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [local.\ACQUI-ARG006].
+        ///   Looks up a localized string similar to [.\SQL_UAI].
         /// </summary>
         internal static string DbServer {
             get {
